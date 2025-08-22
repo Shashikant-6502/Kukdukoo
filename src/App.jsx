@@ -8,13 +8,21 @@ import './style.css'; // Ensure this file exists and is imported
 function App() {
   return (
     <Router>
-      <main>
+      <div className="app-container">
         <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-        </Routes>
-      </main>
-      <Footer />
+        <main>
+          <div className="page-content">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              {/* Add more routes here for other pages */}
+              {/* <Route path="/about" element={<AboutPage />} /> */}
+              {/* <Route path="/sponsor" element={<SponsorPage />} /> */}
+              {/* <Route path="/contact" element={<ContactPage />} /> */}
+            </Routes>
+          </div>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }

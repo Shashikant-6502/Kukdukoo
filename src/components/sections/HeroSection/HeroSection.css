@@ -1,0 +1,154 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full-screen hero */
+    overflow: hidden;
+    margin-top: 0; /* Remove negative margin */
+    padding-top: 200px; /* Add padding to account for header height */
+}
+
+/* Video background wrapper */
+.video-iframe-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Make iframe cover fully and maintain aspect ratio */
+.video-iframe-wrapper iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    border: none;
+    pointer-events: none;
+}
+
+/* Hero content */
+.hero-content {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-bottom: 160px; /* Space for buttons above wave */
+}
+
+/* Buttons container */
+.hero-buttons {
+    position: absolute;
+    top: 55%;
+    /* bottom: 10px; Position at bottom above the wave */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Buttons styling */
+.hero-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 280px;
+    height: 80px;
+    border: 3px solid #000;
+    border-radius: 50px; /* More rounded like in the image */
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Comic Sans MS', 'Fredoka One', cursive;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #000;
+    text-align: center;
+    line-height: 1.2;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Button text styling */
+.hero-buttons button span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Button icon styling */
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    position: absolute;
+    right: 20px;
+}
+
+/* Specific button styles */
+.watch-btn {
+    background-color: #00b7ff;
+    color: #000;
+}
+
+.book-btn {
+    background-color: #ff5c5c;
+    color: #fff;
+}
+
+/* Hover effects */
+.watch-btn:hover {
+    background-color: #0099d4;
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px #000;
+}
+
+.book-btn:hover {
+    background-color: #e24a4a;
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px #000;
+}
+
+/* Button icon */
+.btn-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Wave divider */
+.wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 300px;
+}
+
+.wave-divider svg path {
+    fill: #fff;
+}
