@@ -8,13 +8,11 @@ import './style.css'; // Ensure this file exists and is imported
 function App() {
   return (
     <Router>
-      <Header />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
         </Routes>
       </main>
-      <Footer />
     </Router>
   );
 }

@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Super Comic';
-  src: url('src/assets/font family/super-comic.ttf') format('truetype');
-}
-
 .nav-container {
   margin: 40px;
   display: flex;
@@ -48,7 +43,7 @@
 }
 
 .nav-button p {
-  font-family: 'Super Comic';
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: #333;
@@ -82,7 +77,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out;
 }
-
 
 .book-tickets-button:hover {
   transform: translateY(-5px);

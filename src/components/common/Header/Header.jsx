@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css'; // Your CSS file
+import './Header.css';
 
 // Import your icon images here
 import homeIcon from '../../../assets/images/home-icon.png';

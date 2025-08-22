@@ -10,9 +10,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: 'public/index.html'
-    }
+    emptyOutDir: true
   }
 })
