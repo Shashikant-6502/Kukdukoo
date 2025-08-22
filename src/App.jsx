@@ -9,10 +9,12 @@ function App() {
   return (
     <Router>
       <main>
+        <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
 }
