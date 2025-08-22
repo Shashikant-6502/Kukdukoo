@@ -1,0 +1,11 @@
+.about-kukdukoo{
+  font-family: 'Creato Display', sans-serif;
+  /* font-weight: 175; */
+  font-style: normal; 
+  font-size: 20px;
+  letter-spacing: 0; 
+  text-align: center;
+}
+.about-kukdukoo strong {
+  font-weight: 700;                      
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroSection from '../components/sections/HeroSection/HeroSection';
-import AboutSection from '../components/sections/AboutSection';
+import AboutSection from '../components/sections/AboutSection/AboutSection';
 import CitiesSection from '../components/sections/CitiesSection';
 import TestimonialsSection from '../components/sections/TestimonialsSection';
 import AchievementsSection from '../components/sections/AchievementsSection';
