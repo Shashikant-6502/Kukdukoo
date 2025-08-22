@@ -3,6 +3,28 @@ body {
     margin: 0;
     font-family: 'Comic Sans MS', cursive, sans-serif; /* A font that matches the playful UI */
     background-color: white;
+    min-height: 100vh;
+}
+
+/* App container */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main app layout */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Page content wrapper */
+.page-content {
+    flex: 1;
+    margin-top: 200px; /* Space for fixed header */
+    min-height: calc(100vh - 200px - 300px); /* Account for header and footer */
 }
 
 /* Header & Navigation */
@@ -19,6 +41,7 @@ body {
     position: relative;
     text-align: center;
     color: white;
+    margin-top: -200px; /* Offset the page-content margin for hero */
 }
 
 .hero-image {
@@ -256,6 +279,7 @@ body {
     background-color: #c9f7a7;
     padding: 40px 20px 20px;
     border-top: 5px dashed #a0d4b1;
+    margin-top: auto; /* Push footer to bottom */
 }
 
 .footer-content {
