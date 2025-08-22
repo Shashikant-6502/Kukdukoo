@@ -23,8 +23,8 @@ main {
 /* Page content wrapper */
 .page-content {
     flex: 1;
-    margin-top: 200px; /* Space for fixed header */
-    min-height: calc(100vh - 200px - 300px); /* Account for header and footer */
+    margin-top: 160px; /* Space for fixed header - reduced due to shorter header */
+    min-height: calc(100vh - 160px - 300px); /* Account for header and footer */
 }
 
 /* Header & Navigation */
@@ -41,7 +41,7 @@ main {
     position: relative;
     text-align: center;
     color: white;
-    margin-top: -200px; /* Offset the page-content margin for hero */
+    margin-top: -160px; /* Offset the page-content margin for hero - adjusted for shorter header */
 }
 
 .hero-image {
@@ -87,7 +87,7 @@ main {
 .about-section {
     text-align: center;
     padding: 50px 20px;
-    background-color: #f7fffb;
+    background-color: #ffffff;
     border-bottom: 5px dashed #a0d4b1;
 }
 

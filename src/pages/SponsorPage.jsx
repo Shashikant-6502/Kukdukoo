@@ -16,8 +16,16 @@ function SponsorPage() {
           color: '#333',
           marginBottom: '30px'
         }}>
-          Sponsor Opportunities
+          Welcome to Sponsor Section
         </h1>
+        <h2 style={{ 
+          fontSize: '2.5em', 
+          fontWeight: '700', 
+          color: '#666',
+          marginBottom: '20px'
+        }}>
+          Sponsor Opportunities
+        </h2>
         <p style={{ 
           fontSize: '1.2em', 
           maxWidth: '800px', 

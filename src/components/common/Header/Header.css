@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end; /* Align bottoms of all items */
-  gap: 20px;
+  gap: 15px;
   background-color: white;
   position: fixed;
   top: 0;
@@ -11,7 +11,7 @@
   right: 0;
   z-index: 1000;
   transition: all 0.3s ease-in-out;
-  padding: 20px;
+  padding: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
@@ -31,18 +31,17 @@
 }
 
 .nav-button {
-  width: 220px;
-  height: 160px;
-  border: black;
-  border-style: solid;
-  border-radius: 25px;
+  width: 200px;
+  height: 120px;
+  border: 2px solid #333;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Shrunk button styles */
@@ -53,14 +52,50 @@
   gap: 8px;
   border-radius: 15px;
   border: 2px solid #333;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-button:hover {
   transform: translateY(-5px);
+  border: 3px solid #999;
+  box-shadow: 0 8px 16px rgba(102, 102, 102, 0.2);
 }
 
 .nav-shrunk .nav-button:hover {
   transform: translateY(-2px);
+  border: 3px solid #999;
+  box-shadow: 0 6px 12px rgba(102, 102, 102, 0.2);
+}
+
+.nav-button:hover img {
+  filter: brightness(1.1);
+}
+
+.nav-button:hover p {
+  color: #666;
+  font-weight: bold;
+}
+
+/* Active state styles */
+.nav-button.active {
+  border: 3px solid #666;
+  box-shadow: 0 6px 12px rgba(102, 102, 102, 0.3);
+  transform: translateY(-3px);
+}
+
+.nav-shrunk .nav-button.active {
+  border: 3px solid #666;
+  box-shadow: 0 4px 8px rgba(102, 102, 102, 0.3);
+  transform: translateY(-1px);
+}
+
+.nav-button.active img {
+  filter: brightness(1.1);
+}
+
+.nav-button.active p {
+  color: #666;
+  font-weight: bold;
 }
 
 .home-button {
@@ -74,9 +109,9 @@
 }
 
 .nav-button img {
-  width: 90px; /* Size of the icon images */
-  height: 74px;
-  margin-bottom: 10px;
+  width: 70px; /* Size of the icon images */
+  height: 60px;
+  margin-bottom: 8px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -90,7 +125,7 @@
 .nav-button p {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   color: #333;
   margin: 0;
   transition: all 0.3s ease-in-out;
@@ -107,7 +142,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 20px; /* Spacing for the central element */
+  margin: 0 15px; /* Spacing for the central element */
   transition: all 0.3s ease-in-out;
 }
 
@@ -127,9 +162,9 @@
 }
 
 .rooster-logo {
-  width: 150px; /* Size of the rooster logo */
+  width: 120px; /* Size of the rooster logo */
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -142,14 +177,14 @@
 }
 
 .book-tickets-button {
-  width: 225px;
-  height: 50px;
+  width: 200px;
+  height: 45px;
   background-color: #ec5e5e;
   /* color: white; */
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 20px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);

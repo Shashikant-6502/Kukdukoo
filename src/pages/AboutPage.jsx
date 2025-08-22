@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutSection from '../components/sections/AboutSection';
-import AchievementsSection from '../components/sections/AchievementsSection';
+import AboutSection from '../components/sections/AboutSection/AboutSection';
+import AchievementsSection from '../components/sections/AchievementSection/AchievementsSection';
 import TestimonialsSection from '../components/sections/TestimonialsSection';
 
 function AboutPage() {
@@ -18,8 +18,16 @@ function AboutPage() {
           color: '#333',
           marginBottom: '30px'
         }}>
-          About Kuk Du Koo Fest
+          Welcome to About Section
         </h1>
+        <h2 style={{ 
+          fontSize: '2.5em', 
+          fontWeight: '700', 
+          color: '#666',
+          marginBottom: '20px'
+        }}>
+          About Kuk Du Koo Fest
+        </h2>
         <p style={{ 
           fontSize: '1.2em', 
           maxWidth: '800px', 

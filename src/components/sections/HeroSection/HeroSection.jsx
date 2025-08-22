@@ -1,9 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
 import playButton from '../../../assets/images/play-button.png';
 import arrowButton from '../../../assets/images/arrow-button.png';
 
 function HeroSection() {
+  const navigate = useNavigate();
+
+  const handleWatchHighlights = () => {
+    // Open YouTube video in a new tab
+    window.open('https://www.youtube.com/watch?v=_6pwOsou9ms', '_blank');
+  };
+
+  const handleBookTickets = () => {
+    navigate('/tickets');
+  };
+
   return (
     <section className="hero-section">
       <div className="video-iframe-wrapper">
@@ -18,11 +30,11 @@ function HeroSection() {
 
       <div className="hero-content">
       <div className="hero-buttons">
-  <button className="watch-btn">
+  <button className="watch-btn" onClick={handleWatchHighlights}>
     <span>WATCH<br />HIGHLIGHTS</span>
     <img src={playButton} alt="Play" className="btn-icon" />
   </button>
-  <button className="book-btn">
+  <button className="book-btn" onClick={handleBookTickets}>
     <span>BOOK<br />TICKETS</span>
     <img src={arrowButton} alt="Arrow" className="btn-icon" />
   </button>

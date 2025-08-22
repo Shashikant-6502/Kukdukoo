@@ -1,9 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import partnersData from '../../data/partnersData.json';
 import leftArm from '../../assets/images/left-arm.png';
 import rightArm from '../../assets/images/right-arm.png';
 import '../../styling/PartnerSection.css';
+
 function PartnersSection() {
+  const navigate = useNavigate();
+
+  const handlePartnerWithUs = () => {
+    navigate('/sponsor');
+  };
+
   return (
     <section className="partners-section">
       <h2>
@@ -19,7 +27,7 @@ function PartnersSection() {
         ))}
       </div>
       
-      <button className="partner-btn">PARTNER WITH US →</button>
+      <button className="partner-btn" onClick={handlePartnerWithUs}>PARTNER WITH US →</button>
     </section>
   );
 }

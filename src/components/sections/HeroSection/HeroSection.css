@@ -1,23 +1,21 @@
 .hero-section {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full-screen hero */
+    height: 110vh; 
     overflow: hidden;
-    margin-top: 0; /* Remove negative margin */
-    padding-top: 200px; /* Add padding to account for header height */
+    margin-top: 0; 
+    padding-top: 60px; 
 }
 
-/* Video background wrapper */
 .video-iframe-wrapper {
     position: absolute;
-    top: 0;
+    top: -60px; 
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% + 90px); 
     overflow: hidden;
 }
 
-/* Make iframe cover fully and maintain aspect ratio */
 .video-iframe-wrapper iframe {
     position: absolute;
     top: 50%;
@@ -32,7 +30,6 @@
     pointer-events: none;
 }
 
-/* Hero content */
 .hero-content {
     position: absolute;
     z-index: 3;
@@ -46,14 +43,12 @@
     align-items: center;
     text-align: center;
     color: white;
-    padding-bottom: 160px; /* Space for buttons above wave */
+    padding-bottom: 160px; /
 }
-
 /* Buttons container */
 .hero-buttons {
     position: absolute;
     top: 55%;
-    /* bottom: 10px; Position at bottom above the wave */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -72,7 +67,7 @@
     width: 280px;
     height: 80px;
     border: 3px solid #000;
-    border-radius: 50px; /* More rounded like in the image */
+    border-radius: 50px; 
     font-size: 20px;
     font-weight: 700;
     font-family: 'Comic Sans MS', 'Fredoka One', cursive;
