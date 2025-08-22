@@ -1,18 +1,33 @@
-/* Footer Container with Background Image */
+.social-icons-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Style the social icons (which are SVG components) */
+.social-link {
+  color: black; /* Sets the icon color */
+  transition: color 0.3s ease;
+}
+
+/* Add a hover effect for the icons */
+.social-link:hover {
+  color: #ff5e5e; /* Change color on hover */
+}
+
+/* The rest of your existing Footer.css code remains the same */
 .footer-container {
-  /* Using background image instead of solid color */
   background-image: url('/assets/images/footer-background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border: 3px solid black;
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Super Comic', cursive, sans-serif;
   color: #333;
 }
-
 /* Content wrapper to center the three columns */
 .footer-content {
   display: flex;
@@ -83,7 +98,7 @@
 /* New CSS for Buttons */
 .footer-button {
   padding: 15px 30px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 30px;
   font-family: 'Super Comic', cursive, sans-serif;
   font-weight: bold;
