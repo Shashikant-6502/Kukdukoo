@@ -4,8 +4,20 @@ import { useNavigate } from 'react-router-dom';
 import citiesData from '../../../data/citiesData.json';
 import leftLocationIcon from '../../../assets/images/left-side-location-icon.png';
 import rightLocationIcon from '../../../assets/images/right-side-location-icon.png';
-
+import bengluru from '../../../assets/images/bengluru-icon.png';
+import hyderabad from '../../../assets/images/hyderabad-icon.png';
+import mumbai from '../../../assets/images/mumbai-icon.png';
+import pune from '../../../assets/images/pune-icon.png';
+import noida from '../../../assets/images/noida-icon.png';
 function CitiesSection() {
+
+    const cityIcon = {
+      'bengluru-icon.png': bengluru,
+      'hyderabad-icon.png': hyderabad,
+      'mumbai-icon.png': mumbai,
+      'pune-icon.png': pune,
+      'noida-icon.png': noida,
+    };
   const navigate = useNavigate();
 
   const handleExploreCities = () => {
@@ -37,20 +49,26 @@ function CitiesSection() {
 
       {/* Section Content */}
       <div className="section-content">
-        <h2>
+        <h2 className='curved-heading'>
           <img src={leftLocationIcon} alt="left Location Icon" className="location-icon" />
-          CITIES WE ARE GOING TO
+           <span className="curved-text">CITIES WE ARE GOING TO</span>
           <img src={rightLocationIcon} alt="right Location Icon" className="location-icon" />
         </h2>
 
-        <div className="cities-grid">
-          {citiesData.cities.map((city, index) => (
-            <div key={index} className="city-card">
-              <p>{city.name}</p>
-              <p>{city.date}</p>
-            </div>
-          ))}
-        </div>
+       <div className="cities-grid">
+  {citiesData.cities.map((city, index) => (
+    <div key={index} className="city-card">
+      <img
+        src={cityIcon[city.icon]}
+        alt={city.name}
+        className="city-icon"
+      />
+      <div className="city-name">{city.name}</div>
+      <div className="city-date">{city.date}</div>
+    </div>
+  ))}
+</div>
+
 
         <button className="explore-btn" onClick={handleExploreCities}>
           Explore Cities ➝

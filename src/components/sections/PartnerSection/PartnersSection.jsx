@@ -15,9 +15,9 @@ function PartnersSection() {
 
   return (
     <section className="partners-section">
-      <h2>
+      <h2 className='curved-heading'>
          <img src={leftArm} className='partner-icon'></img>
-         OUR PARTNERS
+        <span className='curved-text'> OUR PARTNERS</span>
           <img src={rightArm}  className='partner-icon'></img>
       </h2>
       <div className="partners-grid">
