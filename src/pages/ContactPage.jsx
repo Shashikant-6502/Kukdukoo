@@ -3,10 +3,10 @@ import React from 'react';
 function ContactPage() {
   return (
     <div style={{ 
-      paddingTop: '50px', 
       textAlign: 'center', 
       backgroundColor: '#f7fffb',
-      minHeight: 'calc(100vh - 200px - 300px)'
+      minHeight: 'calc(100vh - 200px - 300px)',
+      margin: '20px'
     }}>
       <h1 style={{ 
         fontSize: '3em', 

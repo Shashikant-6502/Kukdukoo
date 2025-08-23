@@ -20,11 +20,16 @@ function HeroSection() {
     <section className="hero-section">
       <div className="video-iframe-wrapper">
         <iframe
-          src="https://www.youtube.com/embed/_6pwOsou9ms?autoplay=1&mute=1&loop=1&playlist=_6pwOsou9ms"
+          src="https://www.youtube.com/embed/_6pwOsou9ms?autoplay=1&mute=1&loop=1&playlist=_6pwOsou9ms&controls=0&showinfo=0&rel=0&modestbranding=1"
           title="Kukdukoo Fest Video"
           allow="autoplay; encrypted-media"
           frameBorder="0"
-          // allowFullScreen
+          allowFullScreen={false}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
         ></iframe>
       </div>
 
