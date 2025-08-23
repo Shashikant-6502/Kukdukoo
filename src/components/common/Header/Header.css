@@ -176,6 +176,13 @@
   margin: 0;
 }
 
+/* Hide logo when shrunk on mobile */
+@media (max-width: 768px) {
+  .nav-shrunk .rooster-logo {
+    display: none;
+  }
+}
+
 .book-tickets-button {
   width: 200px;
   height: 45px;
@@ -209,6 +216,159 @@
 
 .nav-shrunk .book-tickets-button:hover {
   transform: translateY(-2px);
+}
+
+/* Mobile responsive styles - similar to shrunk but optimized for mobile */
+.nav-container.mobile {
+  padding: 8px 10px;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-container.mobile.nav-shrunk {
+  padding: 6px 10px;
+  gap: 6px;
+}
+
+/* Mobile button styles - similar to shrunk but smaller */
+.nav-container.mobile .nav-button {
+  width: 80px;
+  height: 40px;
+  flex-direction: row;
+  gap: 4px;
+  border-radius: 12px;
+  border: 2px solid #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-container.mobile .nav-button img {
+  width: 16px;
+  height: 16px;
+  margin-bottom: 0;
+}
+
+.nav-container.mobile .nav-button p {
+  font-size: 10px;
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-container.mobile .nav-button:hover {
+  transform: translateY(-1px);
+  border: 3px solid #999;
+  box-shadow: 0 4px 8px rgba(102, 102, 102, 0.2);
+}
+
+.nav-container.mobile .nav-button.active {
+  border: 3px solid #666;
+  box-shadow: 0 3px 6px rgba(102, 102, 102, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Mobile logo container */
+.nav-container.mobile .logo-and-tickets-container {
+  width: 80px;
+  height: 40px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  flex-direction: row;
+  gap: 4px;
+  margin: 0;
+}
+
+.nav-container.mobile .rooster-logo {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.nav-container.mobile .book-tickets-button {
+  width: 80px;
+  height: 40px;
+  font-size: 10px;
+  border-radius: 12px;
+  color: white;
+  background-color: #ec5e5e;
+  border: 2px solid #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container.mobile .book-tickets-button:hover {
+  transform: translateY(-1px);
+}
+
+/* Responsive design for tablets */
+@media (max-width: 1024px) {
+  .nav-container {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .nav-button {
+    width: 180px;
+    height: 110px;
+  }
+
+  .nav-button img {
+    width: 60px;
+    height: 50px;
+  }
+
+  .nav-button p {
+    font-size: 16px;
+  }
+
+  .rooster-logo {
+    width: 100px;
+  }
+
+  .book-tickets-button {
+    width: 180px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  /* Tablet shrunk state */
+  .nav-container.nav-shrunk {
+    padding: 8px 15px;
+    gap: 15px;
+  }
+
+  .nav-shrunk .nav-button {
+    width: 100px;
+    height: 45px;
+    gap: 6px;
+  }
+
+  .nav-shrunk .nav-button img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav-shrunk .nav-button p {
+    font-size: 12px;
+  }
+
+  .nav-shrunk .logo-and-tickets-container {
+    width: 100px;
+    height: 45px;
+    gap: 6px;
+  }
+
+  .nav-shrunk .rooster-logo {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav-shrunk .book-tickets-button {
+    width: 100px;
+    height: 45px;
+    font-size: 12px;
+  }
 }
 
 /* Responsive design for mobile devices */
@@ -357,5 +517,50 @@
     background-color: #ec5e5e;
     border: 2px solid #333;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Very small screens - ensure everything fits */
+@media (max-width: 360px) {
+  .nav-container {
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .nav-container.nav-shrunk {
+    gap: 3px;
+    padding: 4px;
+  }
+
+  .nav-shrunk .nav-button {
+    width: 50px;
+    height: 30px;
+    gap: 2px;
+  }
+
+  .nav-shrunk .nav-button img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .nav-shrunk .nav-button p {
+    font-size: 7px;
+  }
+
+  .nav-shrunk .logo-and-tickets-container {
+    width: 50px;
+    height: 30px;
+    gap: 2px;
+  }
+
+  .nav-shrunk .rooster-logo {
+    width: 12px;
+    height: 12px;
+  }
+
+  .nav-shrunk .book-tickets-button {
+    width: 50px;
+    height: 30px;
+    font-size: 7px;
   }
 }

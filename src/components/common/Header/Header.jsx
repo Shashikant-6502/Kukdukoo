@@ -9,6 +9,7 @@ import roosterLogo from '../../../assets/images/kukdukoo-logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -18,8 +19,20 @@ const Navigation = () => {
       setIsScrolled(scrollTop > 100); 
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    // Initial check
+    handleResize();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const handleNavigation = (path) => {
@@ -31,7 +44,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className={`nav-container ${isScrolled ? 'nav-shrunk' : ''}`}>
+    <div className={`nav-container ${isScrolled ? 'nav-shrunk' : ''} ${isMobile ? 'mobile' : ''}`}>
       <button 
         className={`nav-button home-button ${location.pathname === '/' ? 'active' : ''}`}
         onClick={() => handleNavigation('/')}
@@ -47,7 +60,7 @@ const Navigation = () => {
         <p>ABOUT</p>
       </button>
       <div className="logo-and-tickets-container">
-        {!isScrolled && (
+        {!isScrolled && !isMobile && (
           <img 
             src={roosterLogo} 
             alt="Kuk Du Koo Fest Logo" 

@@ -63,7 +63,6 @@ function SponsorPage() {
           </button>
         </div>
       </div>
-      <PartnersSection />
     </>
   );
 }
