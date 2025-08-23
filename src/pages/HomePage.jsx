@@ -5,6 +5,7 @@ import CitiesSection from '../components/sections/CitiesSection';
 import TestimonialsSection from '../components/sections/TestimonialsSection';
 import AchievementsSection from '../components/sections/AchievementSection/AchievementsSection';
 import PartnersSection from '../components/sections/PartnersSection';
+import StoreSection from '../components/sections/storeSection/storeIndex.jsx';
 
 function HomePage() {
   return (
@@ -12,6 +13,7 @@ function HomePage() {
       <HeroSection />
       <AboutSection />
       <CitiesSection />
+      <StoreSection />
       <TestimonialsSection />
       <AchievementsSection />
       <PartnersSection />
