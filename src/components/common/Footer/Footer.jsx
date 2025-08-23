@@ -21,7 +21,7 @@ function Footer() {
   };
 
   return (
-    <footer className="footer-container" style={{ backgroundImage: `url(${footerBg})` }}>
+    <footer className="footer-container">
       <div className="footer-content">
         {/* Left Column - Navigation Links */}
         <div className="footer-section footer-links">

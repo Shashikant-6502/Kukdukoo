@@ -1,23 +1,8 @@
-.social-icons-container {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-/* Style the social icons (which are SVG components) */
-.social-link {
-  color: black; /* Sets the icon color */
-  transition: color 0.3s ease;
-}
-
-/* Add a hover effect for the icons */
-.social-link:hover {
-  color: #ff5e5e; /* Change color on hover */
-}
-
-/* The rest of your existing Footer.css code remains the same */
+/* Footer Container - Main wrapper */
 .footer-container {
-  background-image: url('/assets/images/footer-background.png');
+  width: 100%;
+  min-height: 300px;
+  background-image: url('../../../assets/images/footer-background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,7 +12,11 @@
   align-items: center;
   font-family: 'Super Comic', cursive, sans-serif;
   color: #333;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
 }
+
 /* Content wrapper to center the three columns */
 .footer-content {
   display: flex;
@@ -35,7 +24,8 @@
   align-items: center;
   width: 100%;
   max-width: 1400px;
-  padding: 40px 20px;
+  padding: 40px 20px 60px 20px;
+  min-height: 280px;
 }
 
 /* Common styling for footer sections */
@@ -45,6 +35,7 @@
   align-items: center;
   text-align: center;
   gap: 20px;
+  flex: 1;
 }
 
 /* Left Column - Navigation Links */
@@ -62,6 +53,11 @@
   cursor: pointer;
   text-align: left;
   padding-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-links li:hover {
+  color: #ec5e5e;
 }
 
 /* Center Column - Logo and Book Tickets Button */
@@ -69,6 +65,11 @@
   width: 150px;
   height: auto;
   margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
 }
 
 /* Right Column - Social Media and Contact Button */
@@ -84,6 +85,22 @@
   display: flex;
   gap: 15px;
   margin-bottom: 20px;
+  justify-content: center;
+}
+
+/* Style the social icons (which are SVG components) */
+.social-link {
+  color: black;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add a hover effect for the icons */
+.social-link:hover {
+  color: #ff5e5e;
+  transform: scale(1.1);
 }
 
 .social-icon {
@@ -107,19 +124,21 @@
   cursor: pointer;
   box-shadow: 4px 4px 0px black;
   transition: all 0.2s ease-in-out;
+  background-color: #ec5e5e;
 }
 
 .footer-button:hover {
   transform: translateY(-2px);
   box-shadow: 2px 2px 0px black;
+  background-color: #ff5e5e;
 }
 
 .book-tickets-btn {
-  background-color: #ec5e5e; /* Red color from your UI */
+  background-color: #ec5e5e;
 }
 
 .contact-us-btn {
-  background-color: #ec5e5e; /* Red color from your UI */
+  background-color: #ec5e5e;
 }
 
 /* Link wrapper for buttons */
@@ -132,9 +151,14 @@
 
 /* Tablet Styles (768px - 1024px) */
 @media (max-width: 1024px) {
+  .footer-container {
+    min-height: 250px;
+  }
+  
   .footer-content {
     padding: 30px 15px;
     gap: 30px;
+    min-height: 200px;
   }
 
   .footer-section {
@@ -173,11 +197,16 @@
 
 /* Mobile Styles (480px - 767px) */
 @media (max-width: 767px) {
+  .footer-container {
+    min-height: 400px;
+  }
+  
   .footer-content {
     flex-direction: column;
     padding: 25px 10px;
     gap: 25px;
     text-align: center;
+    min-height: 350px;
   }
 
   .footer-section {
@@ -223,9 +252,14 @@
 
 /* Small Mobile Styles (320px - 479px) */
 @media (max-width: 479px) {
+  .footer-container {
+    min-height: 450px;
+  }
+  
   .footer-content {
     padding: 20px 8px;
     gap: 20px;
+    min-height: 400px;
   }
 
   .footer-section {
