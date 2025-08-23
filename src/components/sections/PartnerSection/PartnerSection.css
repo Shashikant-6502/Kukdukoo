@@ -1,8 +1,4 @@
-.partners-section{
-
-}
 .partner-icon{
-       
   width: 80.748px;             
   height: 83.575px;            
   top: 6481.31px;
@@ -72,4 +68,11 @@ display: grid;
 .partner-btn:hover {
   background-color: #b6f052;
   transform: scale(1.05);
+}
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    position: absolute;
+    right: 20px;
 }
