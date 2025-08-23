@@ -5,7 +5,7 @@ import citiesData from '../../../data/citiesData.json';
 import leftLocationIcon from '../../../assets/images/left-side-location-icon.png';
 import rightLocationIcon from '../../../assets/images/right-side-location-icon.png';
 import bengluru from '../../../assets/images/bengluru-icon.png';
-import hyderabad from '../../../assets/images/hyderabad-icon.png';
+import hyderabad from '../../../assets/images/Hyderabad-icon.png';
 import mumbai from '../../../assets/images/mumbai-icon.png';
 import pune from '../../../assets/images/pune-icon.png';
 import noida from '../../../assets/images/noida-icon.png';
