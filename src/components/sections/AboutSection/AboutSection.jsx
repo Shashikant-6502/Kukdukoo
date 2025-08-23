@@ -4,7 +4,8 @@ import './AboutSection.css';
 function AboutSection() {
   return (
     <section className="about-section">
-      <h2 className='about-section-heading'>WHAT IS KUKDUKOO?</h2>
+      <h2 className='about-section-heading'>
+        <span className='curved-text'>WHAT IS KUKDUKOO?</span></h2>
       <div className="about-kukdukoo">
         <p>
           Kukdukoo Fest is <strong>India’s biggest celebration of childhood</strong>—a vibrant, multi-city festival that brings the magic of storytelling, theatre, music, and art to life for <strong>children aged 3–13</strong>.

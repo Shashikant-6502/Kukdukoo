@@ -63,6 +63,7 @@ display: grid;
   cursor: pointer;
   box-shadow: 3px 3px 0 #000;
   transition: all 0.2s ease;
+  width: 250px;
 }
 
 .partner-btn:hover {
