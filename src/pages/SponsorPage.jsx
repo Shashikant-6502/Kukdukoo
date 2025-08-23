@@ -1,5 +1,5 @@
 import React from 'react';
-import PartnersSection from '../components/sections/PartnersSection';
+import PartnersSection from '../components/sections/PartnerSection/PartnersSection.jsx';
 
 function SponsorPage() {
   return (
