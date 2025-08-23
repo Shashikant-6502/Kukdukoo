@@ -16,6 +16,7 @@
 }
 
 .read-button {
+ background-color: #d4ff65; 
   border: 2px solid #000;
   border-radius: 25px;
   padding: 0.8rem 1.5rem;
@@ -24,20 +25,9 @@
   cursor: pointer;
   box-shadow: 3px 3px 0 #000;
   transition: all 0.2s ease;
-  background-color: #d4ff65;
 }
 
 .read-button:hover {
-  background-color: #c0da00;
-  transform: scale(1.03);
-}
-.read-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #b6f052;
+  transform: scale(1.05);
 }
