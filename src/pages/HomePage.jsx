@@ -2,7 +2,7 @@ import React from 'react';
 import HeroSection from '../components/sections/HeroSection/HeroSection';
 import AboutSection from '../components/sections/AboutSection/AboutSection';
 import CitiesSection from '../components/sections/CitySection/CitiesSection';
-import TestimonialsSection from '../components/sections/TestimonialsSection';
+import TestimonialsSection from '../components/sections/TestimonialSection/TestimonialsSection';
 import AchievementsSection from '../components/sections/AchievementSection/AchievementsSection';
 import PartnersSection from '../components/sections/PartnerSection/PartnersSection';
 
