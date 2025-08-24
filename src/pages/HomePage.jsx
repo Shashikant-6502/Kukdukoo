@@ -12,7 +12,7 @@ function HomePage() {
       <HeroSection />
       <AboutSection />
       <CitiesSection />
-      {/* <TestimonialsSection /> */}
+      <TestimonialsSection />
       <AchievementsSection />
       <PartnersSection />
     </>

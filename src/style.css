@@ -232,12 +232,11 @@ main {
     align-items: center;
 }
 
-/* Footer */
+/* Footer
 .main-footer {
     background-color: #c9f7a7;
     padding: 40px 20px 20px;
-    border-top: 5px dashed #a0d4b1;
-    margin-top: auto; /* Push footer to bottom */
+    margin-top: auto; 
 }
 
 .footer-content {
@@ -301,7 +300,7 @@ main {
 .footer-bottom p {
     color: #666;
     margin: 0;
-}
+} */
 
 /* ===== RESPONSIVE DESIGN ===== */
 

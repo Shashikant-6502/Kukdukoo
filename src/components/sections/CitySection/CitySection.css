@@ -41,6 +41,14 @@
   align-items: center;
   text-align: center;
 }
+.curve-line img {
+  width: 100%;    
+  height: auto;    
+  display: block;
+  margin: 0 auto;
+  margin-left: -60px;
+  margin-top: -15px;
+}
 
 .city-icon {
   width: 120px; 
