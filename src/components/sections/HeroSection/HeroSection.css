@@ -161,13 +161,6 @@
     box-shadow: 6px 6px 0px #000;
 }
 
-/* Button icon */
-.btn-icon {
-    width: 22px;
-    height: 22px;
-    object-fit: contain;
-}
-
 /* Wave divider */
 .wave-divider {
     position: absolute;

@@ -1,6 +1,5 @@
 .about-kukdukoo {
   font-family: 'Creato Display', sans-serif;
-  font-weight: 175;
   font-style: normal; 
   font-size: 20px;
   letter-spacing: 0; 
@@ -14,9 +13,10 @@
 
 .about-section-heading {
   margin-top: 0px;
+  text-align: center;
 }
-
 .read-button {
+ background-color: #d4ff65; 
   border: 2px solid #000;
   border-radius: 25px;
   padding: 0.8rem 1.5rem;
@@ -25,10 +25,10 @@
   cursor: pointer;
   box-shadow: 3px 3px 0 #000;
   transition: all 0.2s ease;
-  background-color: #d4ff65;
+  width: 250px;
 }
 
 .read-button:hover {
-  background-color: #c0da00;
-  transform: scale(1.03);
+  background-color: #b6f052;
+  transform: scale(1.05);
 }

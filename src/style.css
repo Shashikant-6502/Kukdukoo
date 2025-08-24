@@ -90,7 +90,6 @@ main {
     text-align: center;
     padding: 50px 20px;
     background-color: #ffffff;
-    border-bottom: 5px dashed #a0d4b1;
 }
 
 .about-section h2 {
@@ -112,43 +111,6 @@ main {
     font-weight: bold;
     box-shadow: 4px 4px 0px #000;
     cursor: pointer;
-}
-
-/* Cities Section */
-.cities-section {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #b7e4f7;
-    border-bottom: 5px dashed #a0d4b1;
-}
-
-.cities-section h2 {
-    font-size: 2.5em;
-    font-weight: 800;
-    color: #ff6b6b;
-}
-
-.cities-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.city-card {
-    background-color: #f8d7da;
-    border: 3px solid #000;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 6px 6px 0px #000;
-    transition: all 0.1s ease;
-}
-
-.city-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 8px 8px 0px #000;
 }
 
 .explore-btn {
@@ -197,8 +159,7 @@ main {
 .testimonials-section {
     text-align: center;
     padding: 50px 20px;
-    background-color: #b7e4f7;
-    border-bottom: 5px dashed #a0d4b1;
+    background-color: white;
 }
 
 .testimonials-section h2 {
@@ -220,7 +181,6 @@ main {
     text-align: center;
     padding: 50px 20px;
     background-color: #f7fffb;
-    border-bottom: 5px dashed #a0d4b1;
 }
 
 .achievements-section h2 {
@@ -238,8 +198,6 @@ main {
 
 .achievement-item {
     background-color: #ffecb3;
-    border: 3px solid #000;
-    border-radius: 20px;
     padding: 20px;
     text-align: center;
     box-shadow: 6px 6px 0px #000;
@@ -249,7 +207,7 @@ main {
 .partners-section {
     text-align: center;
     padding: 50px 20px;
-    background-color: #b7e4f7;
+    background-color:red;
 }
 
 .partners-section h2 {
@@ -268,8 +226,6 @@ main {
 .partner-logo {
     width: 150px;
     height: 100px;
-    border: 3px solid #000;
-    border-radius: 10px;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -618,4 +574,25 @@ main {
     .hero-section {
         margin-top: -100px;
     }
+}
+.curved-heading {
+  text-align: center;
+}
+
+.curved-text {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.curved-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 15px;
+  border-bottom: 3px solid black;
+  border-radius: 30%;
 }

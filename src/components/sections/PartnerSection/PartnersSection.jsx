@@ -1,9 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import partnersData from '../../data/partnersData.json';
-import leftArm from '../../assets/images/left-arm.png';
-import rightArm from '../../assets/images/right-arm.png';
-import '../../styling/PartnerSection.css';
+import partnersData from '../../../data/partnersData.json';
+import leftArm from '../../../assets/images/left-arm.png';
+import rightArm from '../../../assets/images/right-arm.png';
+import './PartnerSection.css';
+import arrowButton from '../../../assets/images/black-arrow-button.png';
 
 function PartnersSection() {
   const navigate = useNavigate();
@@ -14,9 +15,9 @@ function PartnersSection() {
 
   return (
     <section className="partners-section">
-      <h2>
+      <h2 className='curved-heading'>
          <img src={leftArm} className='partner-icon'></img>
-         OUR PARTNERS
+        <span className='curved-text'> OUR PARTNERS</span>
           <img src={rightArm}  className='partner-icon'></img>
       </h2>
       <div className="partners-grid">
@@ -27,7 +28,10 @@ function PartnersSection() {
         ))}
       </div>
       
-      <button className="partner-btn" onClick={handlePartnerWithUs}>PARTNER WITH US →</button>
+      <button className="partner-btn" onClick={handlePartnerWithUs}>
+        <span>PARTNER WITH US </span>
+         <img src={arrowButton} alt="Arrow" className="btn-icon" />
+      </button>
     </section>
   );
 }

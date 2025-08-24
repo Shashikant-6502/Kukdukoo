@@ -22,9 +22,9 @@ function AchievementsSection() {
 
   return (
     <section className="achievements-section">
-      <h2>
+      <h2 className='curved-heading'>
         <img src={star} alt="Star Icon" className='star-icon'></img>
-        FESTIVALS ACHIEVEMENTS
+        <span className='curved-text'>FESTIVALS ACHIEVEMENTS</span>
         <img src={star} alt=" Icon" className='star-icon'></img>
         </h2>
       <div className="achievements-grid">
