@@ -1,7 +1,7 @@
 .achievements-section {
   text-align: center;
-  padding: 50px 20px;
-  background: #fff; /* adjust background if needed */
+  background: #fff; 
+  position: relative;
 }
 
 .achievements-section h2 {
@@ -10,7 +10,14 @@
   justify-content: center;
   gap: 10px;
 }
-
+.paper-arrow {
+  position: absolute;
+  top: 50px;   
+  right: 2px; 
+  width: 250px; 
+  height: auto;
+  pointer-events: none; /* so it doesn’t block clicks */
+}
 .star-icon {
   width: 25px;
   height: 25px;
