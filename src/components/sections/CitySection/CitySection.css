@@ -73,6 +73,7 @@
   margin-top: -25px; 
   z-index:1;
   width: 80%;
+  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
 }
 
 /* Blue label for date */
@@ -88,6 +89,7 @@
   margin-top: -10px;
   position: relative;
   z-index:2;
+  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
 }
 
 /* Explore Button */
@@ -103,6 +105,7 @@
   transition: all 0.2s ease;
   margin-top: 2rem;
   width: 250px;
+  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
 }
 
 .explore-btn:hover {

@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
-import homeIcon from '../../../assets/images/home-icon.png';
-import aboutIcon from '../../../assets/images/about-icon.png';
-import sponsorIcon from '../../../assets/images/sponsor-icon.png';
-import contactIcon from '../../../assets/images/contact-icon.png';
 import roosterLogo from '../../../assets/images/kukdukoo-logo.png';
+import { HomeButton, AboutButton, SponsorButton, ContactButton, BookTicketsButton } from '../../../assets/buttons/index';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,59 +36,68 @@ const Navigation = () => {
     navigate(path);
   };
 
-  const handleLogoClick = () => {
-    navigate('/');
-  };
-
   return (
     <div className={`nav-container ${isScrolled ? 'nav-shrunk' : ''} ${isMobile ? 'mobile' : ''}`}>
-      <button 
-        className={`nav-button home-button ${location.pathname === '/' ? 'active' : ''}`}
+      <HomeButton 
+        isActive={location.pathname === '/'}
+        isScrolled={isScrolled}
+        isMobile={isMobile}
         onClick={() => handleNavigation('/')}
-      >
-        <img src={homeIcon} alt="Home" />
-        <p>HOME</p>
-      </button>
-      <button 
-        className={`nav-button about-button ${location.pathname === '/about' ? 'active' : ''}`}
+      />
+      <AboutButton 
+        isActive={location.pathname === '/about'}
+        isScrolled={isScrolled}
+        isMobile={isMobile}
         onClick={() => handleNavigation('/about')}
-      >
-        <img src={aboutIcon} alt="About" />
-        <p>ABOUT</p>
-      </button>
+      />
       <div className="logo-and-tickets-container">
         {!isScrolled && !isMobile && (
           <img 
             src={roosterLogo} 
             alt="Kuk Du Koo Fest Logo" 
             className="rooster-logo" 
-            onClick={handleLogoClick}
             style={{ cursor: 'pointer' }}
           />
         )}
-        <button 
-          className="book-tickets-button"
+        <BookTicketsButton 
+          isScrolled={isScrolled}
+          isMobile={isMobile}
           onClick={() => handleNavigation('/tickets')}
-        >
-          BOOK TICKETS
-        </button>
+        />
       </div>
-      <button 
-        className={`nav-button sponsor-button ${location.pathname === '/sponsor' ? 'active' : ''}`}
+      <SponsorButton 
+        isActive={location.pathname === '/sponsor'}
+        isScrolled={isScrolled}
+        isMobile={isMobile}
         onClick={() => handleNavigation('/sponsor')}
-      >
-        <img src={sponsorIcon} alt="Sponsor" />
-        <p>SPONSOR</p>
-      </button>
-      <button 
-        className={`nav-button contact-button ${location.pathname === '/contact' ? 'active' : ''}`}
+      />
+      <ContactButton 
+        isActive={location.pathname === '/contact'}
+        isScrolled={isScrolled}
+        isMobile={isMobile}
         onClick={() => handleNavigation('/contact')}
-      >
-        <img src={contactIcon} alt="Contact" />
-        <p>CONTACT</p>
-      </button>
+      />
     </div>
   );
 };
 
-export default Navigation;
+const Header = () => {
+  const [isShrunk, setIsShrunk] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsShrunk(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header className={`header${isShrunk ? ' shrunk' : ''}`}>
+      <Navigation />
+    </header>
+  );
+};
+
+export default Header;

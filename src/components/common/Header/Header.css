@@ -13,6 +13,7 @@
   transition: all 0.3s ease-in-out;
   padding: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 320px; /* Minimum width to prevent overflow */
   width: 100%;
 }
 
@@ -28,114 +29,7 @@
   justify-content: center; /* Keep items centered */
   gap: 20px; /* Same as original */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.nav-button {
-  width: 200px;
-  height: 120px;
-  border: 2px solid #333;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-}
-
-/* Shrunk button styles */
-.nav-shrunk .nav-button {
-  width: 120px;
-  height: 50px;
-  flex-direction: row;
-  gap: 8px;
-  border-radius: 15px;
-  border: 2px solid #333;
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-button:hover {
-  transform: translateY(-5px);
-  border: 3px solid #999;
-  box-shadow: 0 8px 16px rgba(102, 102, 102, 0.2);
-}
-
-.nav-shrunk .nav-button:hover {
-  transform: translateY(-2px);
-  border: 3px solid #999;
-  box-shadow: 0 6px 12px rgba(102, 102, 102, 0.2);
-}
-
-.nav-button:hover img {
-  filter: brightness(1.1);
-}
-
-.nav-button:hover p {
-  color: #666;
-  font-weight: bold;
-}
-
-/* Active state styles */
-.nav-button.active {
-  border: 3px solid #666;
-  box-shadow: 0 6px 12px rgba(102, 102, 102, 0.3);
-  transform: translateY(-3px);
-}
-
-.nav-shrunk .nav-button.active {
-  border: 3px solid #666;
-  box-shadow: 0 4px 8px rgba(102, 102, 102, 0.3);
-  transform: translateY(-1px);
-}
-
-.nav-button.active img {
-  filter: brightness(1.1);
-}
-
-.nav-button.active p {
-  color: #666;
-  font-weight: bold;
-}
-
-.home-button {
-  background-color: #CFF468; /* Light green */
-}
-
-.about-button,
-.sponsor-button,
-.contact-button {
-  background-color: #6cceff; /* Light blue */
-}
-
-.nav-button img {
-  width: 70px; /* Size of the icon images */
-  height: 60px;
-  margin-bottom: 8px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Shrunk image styles */
-.nav-shrunk .nav-button img {
-  width: 20px;
-  height: 20px;
-  margin-bottom: 0;
-}
-
-.nav-button p {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  color: #333;
-  margin: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Shrunk text styles */
-.nav-shrunk .nav-button p {
-  font-size: 14px;
-  font-weight: bold;
-  color: #000;
+  box-sizing: border-box;
 }
 
 .logo-and-tickets-container {
@@ -144,21 +38,23 @@
   align-items: center;
   margin: 0 15px; /* Spacing for the central element */
   transition: all 0.3s ease-in-out;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
-/* Shrunk logo container now acts like a button */
+/* Shrunk logo container - now just contains the button */
 .nav-shrunk .logo-and-tickets-container {
-  width: 120px;
-  height: 50px;
-  border: 2px solid #333;
-  border-radius: 15px;
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  flex-direction: row; /* Align logo and button horizontally if needed */
-  gap: 8px;
+  background-color: transparent;
+  flex-direction: column; /* Keep logo above button */
+  gap: 5px; /* Small gap between logo and button */
   margin: 0; /* Remove extra margin */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .rooster-logo {
@@ -166,14 +62,15 @@
   height: auto;
   margin-bottom: 8px;
   transition: all 0.3s ease-in-out;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
-/* Shrunk logo - keep visible and scale down */
+/* Shrunk logo - smaller but still visible above button */
 .nav-shrunk .rooster-logo {
   display: block;
-  width: 20px;
-  height: 20px;
-  margin: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 0 5px 0; /* Small margin below logo */
 }
 
 /* Hide logo when shrunk on mobile */
@@ -183,122 +80,41 @@
   }
 }
 
-.book-tickets-button {
-  width: 200px;
-  height: 45px;
-  background-color: #ec5e5e;
-  /* color: white; */
-  border: 2px solid black;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out;
-}
-
-/* Shrunk book tickets button */
-.nav-shrunk .book-tickets-button {
-  width: 120px;
-  height: 50px;
-  font-size: 14px;
-  border-radius: 15px;
-  color: white;
-  background-color: #ec5e5e;
-  border: 2px solid #333;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.book-tickets-button:hover {
-  transform: translateY(-5px);
-}
-
-.nav-shrunk .book-tickets-button:hover {
-  transform: translateY(-2px);
-}
-
 /* Mobile responsive styles - similar to shrunk but optimized for mobile */
 .nav-container.mobile {
-  padding: 8px 10px;
-  gap: 8px;
+  padding: 2px 2px;
+  gap: 4px;
   align-items: center;
+  justify-content: space-between; /* Distribute space evenly */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Prevent horizontal scroll */
 }
 
 .nav-container.mobile.nav-shrunk {
-  padding: 6px 10px;
-  gap: 6px;
-}
-
-/* Mobile button styles - similar to shrunk but smaller */
-.nav-container.mobile .nav-button {
-  width: 80px;
-  height: 40px;
-  flex-direction: row;
-  gap: 4px;
-  border-radius: 12px;
-  border: 2px solid #333;
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-container.mobile .nav-button img {
-  width: 16px;
-  height: 16px;
-  margin-bottom: 0;
-}
-
-.nav-container.mobile .nav-button p {
-  font-size: 10px;
-  font-weight: bold;
-  color: #000;
-}
-
-.nav-container.mobile .nav-button:hover {
-  transform: translateY(-1px);
-  border: 3px solid #999;
-  box-shadow: 0 4px 8px rgba(102, 102, 102, 0.2);
-}
-
-.nav-container.mobile .nav-button.active {
-  border: 3px solid #666;
-  box-shadow: 0 3px 6px rgba(102, 102, 102, 0.3);
-  transform: translateY(-1px);
+  padding: 4px 3px;
+  gap: 2px;
 }
 
 /* Mobile logo container */
 .nav-container.mobile .logo-and-tickets-container {
-  width: 80px;
-  height: 40px;
-  border: 2px solid #333;
-  border-radius: 12px;
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  flex-direction: row;
-  gap: 4px;
+  background-color: transparent;
+  flex-direction: column;
+  gap: 2px;
   margin: 0;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .nav-container.mobile .rooster-logo {
   width: 16px;
   height: 16px;
-  margin: 0;
-}
-
-.nav-container.mobile .book-tickets-button {
-  width: 80px;
-  height: 40px;
-  font-size: 10px;
-  border-radius: 12px;
-  color: white;
-  background-color: #ec5e5e;
-  border: 2px solid #333;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nav-container.mobile .book-tickets-button:hover {
-  transform: translateY(-1px);
+  margin: 0 0 4px 0; /* Small margin below logo */
 }
 
 /* Responsive design for tablets */
@@ -306,68 +122,33 @@
   .nav-container {
     gap: 12px;
     padding: 10px;
-  }
-
-  .nav-button {
-    width: 180px;
-    height: 110px;
-  }
-
-  .nav-button img {
-    width: 60px;
-    height: 50px;
-  }
-
-  .nav-button p {
-    font-size: 16px;
+    justify-content: space-between; /* Better distribution */
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
 
   .rooster-logo {
     width: 100px;
   }
 
-  .book-tickets-button {
-    width: 180px;
-    height: 40px;
-    font-size: 14px;
-  }
-
   /* Tablet shrunk state */
   .nav-container.nav-shrunk {
     padding: 8px 15px;
     gap: 15px;
-  }
-
-  .nav-shrunk .nav-button {
-    width: 100px;
-    height: 45px;
-    gap: 6px;
-  }
-
-  .nav-shrunk .nav-button img {
-    width: 18px;
-    height: 18px;
-  }
-
-  .nav-shrunk .nav-button p {
-    font-size: 12px;
+    justify-content: space-between;
   }
 
   .nav-shrunk .logo-and-tickets-container {
-    width: 100px;
-    height: 45px;
-    gap: 6px;
+    width: auto;
+    height: auto;
+    gap: 4px;
+    flex-shrink: 0;
   }
 
   .nav-shrunk .rooster-logo {
-    width: 18px;
-    height: 18px;
-  }
-
-  .nav-shrunk .book-tickets-button {
-    width: 100px;
-    height: 45px;
-    font-size: 12px;
+    width: 25px;
+    height: 25px;
+    margin: 0 0 4px 0;
   }
 }
 
@@ -375,72 +156,38 @@
 @media (max-width: 768px) {
   .nav-container {
     margin: 0;
-    gap: 10px;
-    padding: 15px;
-  }
-
-  .nav-button {
-    width: 160px;
-    height: 120px;
-  }
-
-  .nav-button img {
-    width: 60px;
-    height: 50px;
-  }
-
-  .nav-button p {
-    font-size: 16px;
+    gap: 4px;
+    padding: 6px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    min-width: 320px;
+    margin-right: 10px;
   }
 
   .rooster-logo {
-    width: 100px;
-  }
-
-  .book-tickets-button {
-    width: 180px;
-    height: 45px;
-    font-size: 14px;
+    width: 60px;
   }
 
   /* Mobile shrunk state */
   .nav-container.nav-shrunk {
     margin: 0;
-    padding: 8px 15px;
-    gap: 10px;
-  }
-
-  .nav-shrunk .nav-button {
-    width: 80px;
-    height: 40px;
-    gap: 5px;
-  }
-
-  .nav-shrunk .nav-button img {
-    width: 16px;
-    height: 16px;
-  }
-
-  .nav-shrunk .nav-button p {
-    font-size: 10px;
+    padding: 3px 4px;
+    gap: 3px;
+    justify-content: space-between;
   }
 
   .nav-shrunk .logo-and-tickets-container {
-    width: 80px;
-    height: 40px;
-    gap: 5px;
+    width: auto;
+    height: auto;
+    gap: 2px;
+    flex-shrink: 0;
   }
 
   .nav-shrunk .rooster-logo {
     width: 16px;
     height: 16px;
-  }
-
-  .nav-shrunk .book-tickets-button {
-    width: 80px;
-    height: 40px;
-    font-size: 10px;
-    background-color: #ec5e5e;
+    margin: 0 0 2px 0;
   }
 }
 
@@ -448,119 +195,122 @@
 @media (max-width: 480px) {
   .nav-container {
     margin: 0;
-    gap: 8px;
-    padding: 10px;
-  }
-
-  .nav-button {
-    width: 120px;
-    height: 100px;
-  }
-
-  .nav-button img {
-    width: 50px;
-    height: 40px;
-  }
-
-  .nav-button p {
-    font-size: 14px;
+    gap: 2px;
+    padding: 4px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    min-width: 280px;
   }
 
   .rooster-logo {
-    width: 80px;
-  }
-
-  .book-tickets-button {
-    width: 150px;
-    height: 40px;
-    font-size: 12px;
+    width: 50px;
   }
 
   /* Extra small shrunk state */
   .nav-container.nav-shrunk {
     margin: 0;
-    padding: 5px 10px;
-    gap: 5px;
-  }
-
-  .nav-shrunk .nav-button {
-    width: 60px;
-    height: 35px;
-    gap: 3px;
-  }
-
-  .nav-shrunk .nav-button img {
-    width: 14px;
-    height: 14px;
-  }
-
-  .nav-shrunk .nav-button p {
-    font-size: 8px;
+    padding: 2px 3px;
+    gap: 2px;
+    justify-content: space-between;
   }
 
   .nav-shrunk .logo-and-tickets-container {
-    width: 60px;
-    height: 35px;
-    gap: 3px;
+    width: auto;
+    height: auto;
+    gap: 1px;
+    flex-shrink: 0;
   }
 
   .nav-shrunk .rooster-logo {
     width: 14px;
     height: 14px;
-  }
-
-  .nav-shrunk .book-tickets-button {
-    width: 60px;
-    height: 35px;
-    font-size: 8px;
-    color: white;
-    background-color: #ec5e5e;
-    border: 2px solid #333;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 0 1px 0;
   }
 }
 
 /* Very small screens - ensure everything fits */
 @media (max-width: 360px) {
   .nav-container {
-    gap: 4px;
-    padding: 5px;
+    gap: 2px;
+    padding: 4px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    min-width: 260px;
   }
 
   .nav-container.nav-shrunk {
-    gap: 3px;
-    padding: 4px;
-  }
-
-  .nav-shrunk .nav-button {
-    width: 50px;
-    height: 30px;
     gap: 2px;
-  }
-
-  .nav-shrunk .nav-button img {
-    width: 12px;
-    height: 12px;
-  }
-
-  .nav-shrunk .nav-button p {
-    font-size: 7px;
+    padding: 3px 4px;
+    justify-content: space-between;
   }
 
   .nav-shrunk .logo-and-tickets-container {
-    width: 50px;
-    height: 30px;
-    gap: 2px;
+    width: auto;
+    height: auto;
+    gap: 1px;
+    flex-shrink: 0;
   }
 
   .nav-shrunk .rooster-logo {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
+    margin: 0 0 1px 0;
+  }
+}
+
+/* Ultra small screens */
+@media (max-width: 320px) {
+  .nav-container {
+    gap: 1px;
+    padding: 3px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    min-width: 240px;
   }
 
-  .nav-shrunk .book-tickets-button {
-    width: 50px;
-    height: 30px;
-    font-size: 7px;
+  .nav-container.nav-shrunk {
+    gap: 1px;
+    padding: 2px 3px;
+    justify-content: space-between;
+  }
+
+  .nav-shrunk .logo-and-tickets-container {
+    width: auto;
+    height: auto;
+    gap: 1px;
+    flex-shrink: 0;
+  }
+
+  .nav-shrunk .rooster-logo {
+    width: 14px;
+    height: 14px;
+    margin: 0 0 1px 0;
+  }
+}
+
+.header {
+  transition: all 0.3s ease;
+  /* ...existing styles... */
+}
+
+.header.shrunk {
+  height: 60px; /* example shrunk height */
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  /* ...other shrunk styles... */
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .header {
+    height: 80px; /* initial mobile height */
+    /* ...mobile-specific styles... */
+  }
+  .header.shrunk {
+    height: 50px; /* shrunk mobile height */
+    /* ...mobile shrunk styles... */
   }
 }

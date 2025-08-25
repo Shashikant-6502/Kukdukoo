@@ -1,5 +1,5 @@
 .about-kukdukoo {
-  font-family: 'Creato Display', sans-serif;
+  font-family: 'Super Comic', 'Creato Display', sans-serif;
   font-style: normal; 
   font-size: 20px;
   letter-spacing: 0; 
@@ -26,6 +26,7 @@
   box-shadow: 3px 3px 0 #000;
   transition: all 0.2s ease;
   width: 250px;
+  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
 }
 
 .read-button:hover {

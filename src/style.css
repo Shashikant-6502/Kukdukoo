@@ -1,9 +1,29 @@
+/* Import Super Comic font */
+@font-face {
+    font-family: 'Super Comic';
+    src: url('./assets/fonts/super-comic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Global Styles & Body */
 body {
     margin: 0;
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* A font that matches the playful UI */
+    font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif; /* Apply Super Comic font */
     background-color: white;
     min-height: 100vh;
+}
+
+/* Apply Super Comic font to all text elements */
+* {
+    font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  max-width: 100vw;
 }
 
 /* App container */
@@ -502,4 +522,9 @@ main {
   height: 15px;
   border-bottom: 3px solid black;
   border-radius: 30%;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100vw;
 }

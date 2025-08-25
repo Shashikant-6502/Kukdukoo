@@ -1,0 +1,224 @@
+.book-tickets-button {
+  width: 200px;
+  height: 45px;
+  background-color: #ec5e5e;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+  flex-shrink: 0; /* Prevent shrinking */
+  min-width: 0; /* Allow content to determine minimum width */
+
+  /* Center text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Shrunk book tickets button */
+.nav-shrunk .book-tickets-button {
+  width: 140px;
+  height: 45px;
+  font-size: 12px;
+  border-radius: 15px;
+  color: white;
+  background-color: #ec5e5e;
+  border: 2px solid #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-tickets-button:hover {
+  transform: translateY(-5px);
+}
+
+.nav-shrunk .book-tickets-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive styles */
+.nav-container.mobile .book-tickets-button {
+  width: 110px;
+  height: 40px;
+  font-size: 8px;
+  border-radius: 12px;
+  color: white;
+  background-color: #ec5e5e;
+  border: 2px solid #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  flex-shrink: 0;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-container.mobile .book-tickets-button:hover {
+  transform: translateY(-1px);
+}
+
+/* Responsive design for tablets */
+@media (max-width: 1024px) {
+  .book-tickets-button {
+    width: 180px;
+    height: 40px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Tablet shrunk state */
+  .nav-shrunk .book-tickets-button {
+    width: 120px;
+    height: 45px;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .book-tickets-button {
+    width: 180px;
+    height: 45px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+    flex-shrink: 0;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Mobile shrunk state */
+  .nav-shrunk .book-tickets-button {
+    width: 100px;
+    height: 40px;
+    font-size: 7px;
+    background-color: #ec5e5e;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    flex-shrink: 0;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .book-tickets-button {
+    width: 150px;
+    height: 40px;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+    flex-shrink: 0;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Extra small shrunk state */
+  .nav-shrunk .book-tickets-button {
+    width: 80px;
+    height: 35px;
+    font-size: 6px;
+    color: white;
+    background-color: #ec5e5e;
+    border: 2px solid #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    flex-shrink: 0;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .nav-shrunk .book-tickets-button {
+    width: 70px;
+    height: 30px;
+    font-size: 5px;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    flex-shrink: 0;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Ultra small screens */
+@media (max-width: 320px) {
+  .nav-shrunk .book-tickets-button {
+    width: 60px;
+    height: 28px;
+    font-size: 4px;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    flex-shrink: 0;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
