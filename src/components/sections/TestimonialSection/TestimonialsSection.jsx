@@ -12,7 +12,7 @@ import danceImg from '../../../assets/images/dance.jpg';
 const cardsData = [
   {
     id: 1,
-    text: "card-1.Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+    text: "card-1.Another testimonial text goes here. It shows how cycling through works perfectly.",
     image: authorImg
   },
   {
