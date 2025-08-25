@@ -9,6 +9,7 @@ import hyderabad from '../../../assets/images/Hyderabad-icon.png';
 import mumbai from '../../../assets/images/mumbai-icon.png';
 import pune from '../../../assets/images/pune-icon.png';
 import noida from '../../../assets/images/noida-icon.png';
+import lineStyle from '../../../assets/images/dashed-lines-icon.png';
 function CitiesSection() {
 
     const cityIcon = {
@@ -48,6 +49,9 @@ function CitiesSection() {
       </div>
 
       {/* Section Content */}
+      <div className="curve-line">
+      <img src={lineStyle} alt="line style"/>
+      </div>
       <div className="section-content">
         <h2 className='curved-heading'>
           <img src={leftLocationIcon} alt="left Location Icon" className="location-icon" />

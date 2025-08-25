@@ -1,7 +1,6 @@
 import React from 'react';
 import AboutSection from '../components/sections/AboutSection/AboutSection';
 import AchievementsSection from '../components/sections/AchievementSection/AchievementsSection';
-import TestimonialsSection from '../components/sections/TestimonialsSection';
 
 function AboutPage() {
   return (
