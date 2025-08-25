@@ -1,47 +1,68 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./TestimonialSection.css";
 import leftLoveIcon from '../../../assets/images/left-love-icon.png';
 import rightLoveIcon from '../../../assets/images/right-love-icon.png';
-const cardsData = [
-  { id: 1, title: "Card 1", desc: "This is card one" },
-  { id: 2, title: "Card 2", desc: "This is card two" },
-  { id: 3, title: "Card 3", desc: "This is card three" },
-  { id: 4, title: "Card 4", desc: "This is card four" },
-  { id: 5, title: "Card 5", desc: "This is card five" },
-  { id: 6, title: "Card 6", desc: "This is card six" },
-];
+import leftArrowIcon from '../../../assets/images/left-arrow-icon.png';
+import rightArrowIcon from '../../../assets/images/right-arrow-icon.png';
+import quoteIcon from '../../../assets/images/inverted-comma-icon.png';
+import authorImg from '../../../assets/images/author.jpg';
+import dramaImg from '../../../assets/images/drama.jpg';
+import danceImg from '../../../assets/images/dance.jpg';
 
+const cardsData = [
+  {
+    id: 1,
+    text: "card-1.Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+    image: authorImg
+  },
+  {
+    id: 2,
+    text: "card-2.Another testimonial text goes here. It shows how cycling through works perfectly.",
+    image: dramaImg
+  },
+  {
+    id: 3,
+    text: "card-3.Final testimonial example for the carousel effect. Clicking next goes back to the first one.",
+    image: danceImg
+  },
+  {
+    id: 4,
+    text: "card-4.Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+    image: authorImg
+  },
+  {
+    id: 5,
+    text: "card-5.Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+    image: dramaImg
+  },
+  {
+    id: 6,
+    text: "card-6.Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+    image: danceImg
+  },
+  {
+    id: 7,
+    text: "card-7.writeen by tanujain.Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+    image: authorImg
+  }
+];
 function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNext = () => {
-    if (currentIndex < cardsData.length - 3) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0); // loop back to start
-    }
-  };
-
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    } else {
-      setCurrentIndex(cardsData.length - 3); // loop back to last
-    }
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? cardsData.length - 1 : prevIndex - 1
+    );
   };
 
-  // ✅ Auto scroll every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === cardsData.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
-    
-    <section className="card-section">
-        
+    <section className="testimonial-section">
       <div className="wave-divider-family wave-top">
         <svg
           viewBox="0 0 1440 320"
@@ -61,49 +82,41 @@ function TestimonialsSection() {
         </svg>
       </div>
       <div className="heading-wrapper">
-    <h2 className="curved-heading">
-      <img src={leftLoveIcon} alt="left Love Icon" className="love-icon" />
-      <span className="curved-text">WHY FAMiLiES LOVE US</span>
-      <img src={rightLoveIcon} alt="right Love Icon" className="love-icon" />
-    </h2>
-  </div>
-      <div className="slider-wrapper">
-        
-        {/* Left Arrow */}
-        <button className="arrow left" onClick={handlePrev}>
-          ◀
+        <h2 className="curved-heading">
+          <img src={leftLoveIcon} alt="left Love Icon" className="love-icon" />
+          <span className="curved-text">WHY FAMILIES LOVE US</span>
+          <img src={rightLoveIcon} alt="right Love Icon" className="love-icon" />
+        </h2>
+      </div>
+      <div className="testimonial-content">
+        <button className="arrow-btn left" onClick={handlePrev}>
+          <img src={leftArrowIcon} alt="Left" />
         </button>
-
-        {/* Slider */}
-        <div className="slider">
-          <div
-            className="cards-container"
-            style={{ transform: `translateX(-${currentIndex * 33.33}%)` }}
-          >
-        
-                  
-            {cardsData.map((card) => (
-              <div key={card.id} className="card">
-                 <div className="card-content">
-                   <h3>{card.title}</h3>
-                 </div>
-                 <div className="quote-box">
-                   <span className="quote-icon">❝</span>
-                    <p>{card.desc}</p>
-                 </div>
-                {/* Overlapping Button */}
-            
+        {/* Render 3 cards at a time */}
+        {Array.from({ length: 3 }).map((_, i) => {
+          const idx = (currentIndex + i) % cardsData.length;
+          const card = cardsData[idx];
+          return (
+            <div className="testimonial-card" key={card.id}>
+              <div className="card-image">
+                <img src={card.image} alt={`testimonial ${card.id}`} />
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right Arrow */}
-        <button className="arrow right" onClick={handleNext}>
-          ▶
+              <div className="testimonial-card-content">
+              <div className="card-text">
+                <img src={quoteIcon} alt="quote" className="quote-icon" />
+                <div className="testimonial-text-wrapper">
+                  <p>{card.text}</p>
+                </div>
+              </div>
+              </div>
+            </div>
+          );
+        })}
+        <button className="arrow-btn right" onClick={handleNext}>
+          <img src={rightArrowIcon} alt="Right" />
         </button>
       </div>
-       <div className="wave-divider-family wave-bottom">
+      <div className="wave-divider-family wave-bottom">
         <svg
           viewBox="0 0 1440 320"
           xmlns="http://www.w3.org/2000/svg"
