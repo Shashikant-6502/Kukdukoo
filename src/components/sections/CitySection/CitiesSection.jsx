@@ -10,6 +10,7 @@ import mumbai from '../../../assets/images/mumbai-icon.png';
 import pune from '../../../assets/images/pune-icon.png';
 import noida from '../../../assets/images/noida-icon.png';
 import lineStyle from '../../../assets/images/dashed-lines-icon.png';
+import citiesPaperPlane from '../../../assets/images/cities-paper-plane-icon.png';
 function CitiesSection() {
 
     const cityIcon = {
@@ -28,6 +29,7 @@ function CitiesSection() {
 
   return (
     <section className="city-section">
+      <img src={citiesPaperPlane} alt="Paper Arrow" className="paper-arrow-plane" />
       {/* Top Wave */}
       <div className="wave-divider-city wave-top">
         <svg

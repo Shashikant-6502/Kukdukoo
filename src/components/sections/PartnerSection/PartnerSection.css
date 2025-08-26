@@ -175,6 +175,17 @@ display: grid;
   overflow: hidden;
   z-index: 0;
 }
+.wave-divider-partner::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  width: 150px; 
+  height: 150px;
+  background: url("../../../assets/images/boat-icon.png") no-repeat center;
+  background-size: contain;
+  z-index: 2; 
+}
 
 .wave-divider-partner svg {
   display: block;
