@@ -16,7 +16,7 @@
   right: 2px; 
   width: 250px; 
   height: auto;
-  pointer-events: none; /* so it doesn’t block clicks */
+  pointer-events: none; 
 }
 .star-icon {
   width: 25px;

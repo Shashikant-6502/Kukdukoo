@@ -101,13 +101,15 @@ function TestimonialsSection() {
               <div className="card-image">
                 <img src={card.image} alt={`testimonial ${card.id}`} />
               </div>
-              <div className="testimonial-card-content">
-              <div className="card-text">
-                <img src={quoteIcon} alt="quote" className="quote-icon" />
-                <div className="testimonial-text-wrapper">
-                  <p>{card.text}</p>
+              <div className="testimonial-card-content" style={{transform: 'scaleX(1.09)'}}>
+                <div className="card-text">
+                  <div className="quote-icon-overlap">
+                    <img src={quoteIcon} alt="quote" className="quote-icon" />
+                  </div>
+                  <div className="testimonial-text-wrapper">
+                    <p>{card.text}</p>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
           );
