@@ -11,6 +11,7 @@ import pune from '../../../assets/images/pune-icon.png';
 import noida from '../../../assets/images/noida-icon.png';
 import lineStyle from '../../../assets/images/dashed-lines-icon.png';
 import citiesPaperPlane from '../../../assets/images/cities-paper-plane-icon.png';
+import WaveDividerLayout from '../../layout/WaveDividerLayout';
 function CitiesSection() {
 
     const cityIcon = {
@@ -24,31 +25,14 @@ function CitiesSection() {
 
   const handleExploreCities = () => {
     // For now, navigate to home page since there's no specific cities page
-    navigate('/');
+    navigate('/Mumbai');
   };
 
   return (
     <section className="city-section">
-      <img src={citiesPaperPlane} alt="Paper Arrow" className="paper-arrow-plane" />
+      <img src={citiesPaperPlane} alt="Paper Arrow" className="paper-arrow" />
       {/* Top Wave */}
-      <div className="wave-divider-city wave-top">
-        <svg
-          viewBox="0 0 1440 320"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#ffffff"
-            d="
-              M0,160 
-              C 120,80 240,240 360,160
-              C 480,80 600,240 720,160
-              C 840,80 960,240 1080,160
-              C 1200,80 1320,240 1440,160
-              L1440,320 L0,320 Z"
-          />
-        </svg>
-      </div>
+    <WaveDividerLayout position="top" hideWave={false} hideBoat={false} />
 
       {/* Section Content */}
       <div className="curve-line">
@@ -82,24 +66,7 @@ function CitiesSection() {
       </div>
 
       {/* Bottom Wave */}
-      <div className="wave-divider-city wave-bottom">
-        <svg
-          viewBox="0 0 1440 320"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#ffffff"
-            d="
-              M0,160 
-              C 120,80 240,240 360,160
-              C 480,80 600,240 720,160
-              C 840,80 960,240 1080,160
-              C 1200,80 1320,240 1440,160
-              L1440,320 L0,320 Z"
-          />
-        </svg>
-      </div>
+       <WaveDividerLayout position="bottom" hideWave={false} hideBoat={true} />
     </section>
   );
 }
