@@ -28,7 +28,9 @@ function CitiesSection({ exploreLabel = "Explore Cities" }) {
   };
 
   const navigate = useNavigate();
-  const handleExploreCities = () => navigate('/');
+  const handleExploreCities = () => {
+      navigate('/CityPage');
+  };
 
   return (
     <div className="city-section">
@@ -73,10 +75,7 @@ function CitiesSection({ exploreLabel = "Explore Cities" }) {
             ))}
           </Swiper>
         </div>
-
-        {/* ✅ Button */}
-        <ArrowButton label={"Explore All Cities"} />
-        {/* ✅ Paper Plane */}
+        <ArrowButton label={"Explore All Cities"} onClick={handleExploreCities} />
       </div>
       <WaveDividerLayout position="bottom" hideWave={false} hideBoat={true} />
     </div>
