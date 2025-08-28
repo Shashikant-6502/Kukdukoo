@@ -9,7 +9,6 @@ import sponsorsAchievementIcon from '../../../assets/images/sponsors-achievement
 import trophyIcon from '../../../assets/images/trophy-icon.png';
 import paperArrow from '../../../assets/images/paper-arrow-icon.png';
 import './AchievementsSection.css';
-import paperArrow from '../../../assets/images/paper-arrow-icon.png';
 
 function AchievementsSection() {
   // Create a mapping object for icons
