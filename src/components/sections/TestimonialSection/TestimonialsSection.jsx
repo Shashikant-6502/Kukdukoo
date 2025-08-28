@@ -8,7 +8,7 @@ import quoteIcon from '../../../assets/images/inverted-comma-icon.png';
 import authorImg from '../../../assets/images/author.jpg';
 import dramaImg from '../../../assets/images/drama.jpg';
 import danceImg from '../../../assets/images/dance.jpg';
-
+import WaveDividerLayout from '../../layout/WaveDividerLayout';
 const cardsData = [
   {
     id: 1,
@@ -63,24 +63,7 @@ function TestimonialsSection() {
 
   return (
     <section className="testimonial-section">
-      <div className="wave-divider-family wave-top">
-        <svg
-          viewBox="0 0 1440 320"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#ffffff"
-            d="
-              M0,160 
-              C 120,80 240,240 360,160
-              C 480,80 600,240 720,160
-              C 840,80 960,240 1080,160
-              C 1200,80 1320,240 1440,160
-              L1440,320 L0,320 Z"
-          />
-        </svg>
-      </div>
+      <WaveDividerLayout position="top" boatPosition="right-boat"/>
       <div className="heading-wrapper">
         <h2 className="curved-heading">
           <img src={leftLoveIcon} alt="left Love Icon" className="love-icon" />
@@ -118,24 +101,7 @@ function TestimonialsSection() {
           <img src={rightArrowIcon} alt="Right" />
         </button>
       </div>
-      <div className="wave-divider-family wave-bottom">
-        <svg
-          viewBox="0 0 1440 320"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#ffffff"
-            d="
-              M0,160 
-              C 120,80 240,240 360,160
-              C 480,80 600,240 720,160
-              C 840,80 960,240 1080,160
-              C 1200,80 1320,240 1440,160
-              L1440,320 L0,320 Z"
-          />
-        </svg>
-      </div>
+      <WaveDividerLayout position="bottom" hideBoat="true"/>
     </section>
   );
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import VideoHighlight from '../components/cityPageSections/VideoHighlight/VideoHighlight';
 import StoreSection from '../components/cityPageSections/StoreSection/StoreSection';
-import BookTickets from '../components/cityPageSections/BookTIckets/BookTIckets';
+import BookTickets from '../components/cityPageSections/BookTickets/BookTickets';
 import OurPartners from '../components/cityPageSections/OurPartners/OurPartners';
 import FestivalSchedule from '../components/cityPageSections/FestivalSchedule/FestivalSchedule';
-import Faq from '../components/cityPageSections/Faq/Faq';
+import Faq from '../components/cityPageSections/FAQ/FAQ';
 import UpcomingCities from '../components/cityPageSections/UpcomingCities/UpcomingCities';
 import CityInfo from '../components/cityPageSections/CityInfo/CityInfo';
 

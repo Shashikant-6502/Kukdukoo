@@ -7,6 +7,7 @@ import ContactPage from './pages/ContactPage';
 import TicketsPage from './pages/TicketsPage';
 import Header from './components/common/Header/Header';
 import Footer from './components/common/Footer/Footer';
+import MumbaiCityPage from "./pages/MumbaiCityPage";
 import './style.css'; 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/sponsor" element={<SponsorPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/tickets" element={<TicketsPage />} />
+              <Route path="/Mumbai" element={<MumbaiCityPage/>} />
             </Routes>
           </div>
         </main>
