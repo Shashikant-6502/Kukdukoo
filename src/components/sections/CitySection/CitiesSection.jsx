@@ -28,7 +28,7 @@ function CitiesSection({ exploreLabel = "Explore Cities" }) {
   };
 
   const navigate = useNavigate();
-  const handleExploreCities = () => navigate('/Mumbai');
+  const handleExploreCities = () => navigate('/');
 
   return (
     <div className="city-section">
@@ -75,8 +75,7 @@ function CitiesSection({ exploreLabel = "Explore Cities" }) {
         </div>
 
         {/* ✅ Button */}
-        <ArrowButton label={"Explore All Cities"} onClick={handleExploreCities} />
-
+        <ArrowButton label={"Explore All Cities"} />
         {/* ✅ Paper Plane */}
       </div>
       <WaveDividerLayout position="bottom" hideWave={false} hideBoat={true} />
