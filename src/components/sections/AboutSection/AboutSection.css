@@ -1,35 +1,67 @@
-.about-kukdukoo {
-  font-family: 'Super Comic', 'Creato Display', sans-serif;
-  font-style: normal; 
-  font-size: 20px;
-  letter-spacing: 0; 
+/* Section wrapper */
+.about-section {
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
-  margin-top: 0px;
+  margin-top: -70px;
 }
 
-.about-kukdukoo strong {
-  font-weight: 700;
+/* Override global font for text only, not button */
+.about-section * {
+  font-family: var(--font-creato-display) !important;
 }
 
+/* ✅ Heading uses super comic */
 .about-section-heading {
-  margin-top: 0px;
-  text-align: center;
-}
-.read-button {
- background-color: #d4ff65; 
-  border: 2px solid #000;
-  border-radius: 25px;
-  padding: 0.8rem 1.5rem;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 3px 3px 0 #000;
-  transition: all 0.2s ease;
-  width: 250px;
-  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+  font-family: var(--font-super-comic) !important;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
-.read-button:hover {
-  background-color: #b6f052;
-  transform: scale(1.05);
+/* Body text */
+.about-kukdukoo {
+  font-family: var(--font-creato-display) !important;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.about-kukdukoo p {
+  font-family: var(--font-creato-display) !important;
+  font-weight: var(--font-weight-medium) !important;
+}
+
+/* ✅ Highlighted bold words */
+.highlight {
+  font-family: var(--font-creato-display) !important;
+  font-weight: var(--font-weight-black) !important;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+/* ✅ Force ArrowButton back to Super Comic */
+.about-section .arrow-button {
+  font-family: var(--font-super-comic) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-section-heading {
+    font-size: 1.8rem;
+  }
+  .about-kukdukoo {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section-heading {
+    font-size: 1.6rem;
+  }
+  .about-kukdukoo {
+    font-size: 15px;
+    line-height: 1.5;
+  }
 }

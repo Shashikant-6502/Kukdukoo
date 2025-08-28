@@ -4,13 +4,11 @@
   position: relative;
 }
 
-.paper-arrow {
-  position: absolute;
-  top: 50px;   
-  right: 2px; 
-  width: 250px; 
-  height: auto;
-  pointer-events: none; /* so it doesn’t block clicks */
+.achievements-section h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .paper-arrow {
   position: absolute;
