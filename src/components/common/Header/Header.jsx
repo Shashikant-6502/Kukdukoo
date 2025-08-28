@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./Header.css";
+import "./header.css";
 import roosterLogo from "../../../assets/images/kukdukoo-logo.png";
 import aboutIcon from "../../../assets/images/about-icon.png";
 import aboutActiveIcon from "../../../assets/images/about-active-icon.png";
