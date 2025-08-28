@@ -6,12 +6,13 @@
   background-size: cover;
   background-position:top center;
   background-repeat: no-repeat;
-  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Super Comic', cursive, sans-serif;
   color: #333;
+  margin: 0;
+  padding: 0;
   padding-bottom: 20px; 
   position: relative;
   background-color: #c8f0ff; 

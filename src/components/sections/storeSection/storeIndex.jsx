@@ -11,6 +11,7 @@ import superman from "../../../assets/images/superman.png";
 import face from "../../../assets/images/face.png";
 import tortoise from "../../../assets/images/tortoise.png";
 import pen from "../../../assets/images/pen.png";
+import paperArrowStore from "../../../assets/images/store-paper-plane-icon.png";
 
 export default function StoreSection() {
   const [activeTab, setActiveTab] = useState('on-stage');
@@ -35,6 +36,7 @@ export default function StoreSection() {
 
   return (
     <div className="store-header">
+      <img src={paperArrowStore} alt="Paper Arrow" className="paper-arrow-store" />
       {/* Heading */}
       <h1 className="store-title">
         WHAT'S IN STORE <span className="question-mark">?</span>

@@ -7,6 +7,7 @@ import medalIcon from '../../../assets/images/medal-icon.png';
 import attendeesIcon from '../../../assets/images/attendees-icon.png';
 import sponsorsAchievementIcon from '../../../assets/images/sponsors-achievement-icon.png';
 import trophyIcon from '../../../assets/images/trophy-icon.png';
+import paperArrow from '../../../assets/images/paper-arrow-icon.png';
 import './AchievementsSection.css';
 import paperArrow from '../../../assets/images/paper-arrow-icon.png';
 
@@ -23,7 +24,7 @@ function AchievementsSection() {
 
   return (
     <section className="achievements-section">
-    <img src={paperArrow} alt="Paper Arrow" className="paper-arrow" />
+       <img src={paperArrow} alt="Paper Arrow" className="paper-arrow" />
       <h2 className='curved-heading'>
         <img src={star} alt="Star Icon" className='star-icon'></img>
         <span className='curved-text'>FESTIVALS ACHIEVEMENTS</span>

@@ -1,7 +1,7 @@
 .achievements-section {
+  text-align: center;
   background: #fff; 
   position: relative;
-  background: #fff; /* adjust background if needed */
 }
 
 .paper-arrow {
@@ -11,6 +11,14 @@
   width: 250px; 
   height: auto;
   pointer-events: none; /* so it doesn’t block clicks */
+}
+.paper-arrow {
+  position: absolute;
+  top: 50px;   
+  right: 2px; 
+  width: 250px; 
+  height: auto;
+  pointer-events: none; 
 }
 .star-icon {
   width: 25px;

@@ -1,7 +1,7 @@
 /* Section Wrapper */
 .city-section {
   position: relative;
-  background: #b3e5fc; /* light blue background */
+  background: #c8f0ff; 
   text-align: center;
   padding: 6rem 2rem;
   overflow: hidden;
@@ -111,39 +111,13 @@
   background-color: #b6f052;
   transform: scale(1.05);
 }
-
-/* Waves */
-.wave-divider-city {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  line-height: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.wave-divider-city svg {
-  display: block;
-  width: 100%;
-  height: 150px;
-}
-
-.wave-divider-city svg path {
-  fill: #fff;
-}
-
-/* Top Wave */
-.wave-top {
-  top: 0;
-}
-
-.wave-top svg {
-  transform: rotate(180deg);
-}
-
-/* Bottom Wave */
-.wave-bottom {
-  bottom: 0;
+.paper-arrow-plane{
+   position: absolute;
+bottom: -60px;  
+  right: 2px; 
+  width: 250px; 
+  height: auto;
+  pointer-events: none;
 }
 
 /* Section Content stays above waves */
