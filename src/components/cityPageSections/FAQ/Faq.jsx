@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./FAQ.css";
+import "./faq.css";
 import faqsData from "./faq.json"; // JSON file
 import WaveDividerLayout from "../../layout/WaveDividerLayout";
 
