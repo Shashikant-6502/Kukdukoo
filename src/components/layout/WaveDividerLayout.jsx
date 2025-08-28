@@ -1,4 +1,4 @@
-import './WaveDividerLayout.scss';
+import './WaveDividerLayout.css';
 
 const WaveDividerLayout = ({ position, hideWave = false, hideBoat = false, boatPosition }) => {
     return (

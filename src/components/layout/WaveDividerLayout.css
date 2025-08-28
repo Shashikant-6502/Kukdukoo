@@ -31,11 +31,15 @@
   background-size: contain;
   z-index: 2;
 }
-.wave-divider.top.left-boat::before,
+.wave-divider.top.left-boat::before {
+  left: 20px;
+}
 .wave-divider.bottom.left-boat::before {
   left: 20px;
 }
-.wave-divider.top.right-boat::before,
+.wave-divider.top.right-boat::before {
+  right: 20px;
+}
 .wave-divider.bottom.right-boat::before {
   right: 20px;
 }
