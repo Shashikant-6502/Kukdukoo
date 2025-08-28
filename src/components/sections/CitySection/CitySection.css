@@ -136,29 +136,6 @@
   height: auto;
   pointer-events: none;
 }
-
-/* ------------------------------
-   Waves (if needed)
------------------------------- */
-.wave-divider-city {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  line-height: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.wave-divider-city svg {
-  display: block;
-  width: 100%;
-  height: 150px;
-}
-
-.wave-divider-city svg path {
-  fill: #fff;
-}
-
 /* Section Content */
 .section-content {
   position: relative;

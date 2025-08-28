@@ -17,7 +17,7 @@ import pune from '../../../assets/images/pune-icon.png';
 import noida from '../../../assets/images/noida-icon.png';
 import citiesPaperPlane from '../../../assets/images/cities-paper-plane-icon.png';
 import ArrowButton from "../../../assets/buttons/greenButton/greenButton";
-
+import WaveDividerLayout from '../../layout/WaveDividerLayout';
 function CitiesSection({ exploreLabel = "Explore Cities" }) {
   const cityIcon = {
     'bengluru-icon.png': bengluru,
@@ -32,6 +32,8 @@ function CitiesSection({ exploreLabel = "Explore Cities" }) {
 
   return (
     <div className="city-section">
+      <img src={citiesPaperPlane} alt="Paper Arrow" className="paper-arrow" />
+      <WaveDividerLayout position="top" hideWave={false} hideBoat={false} />
       <div className="section-content">
         <h2>
           <img src={leftLocationIcon} alt="Location" className="location-icon" />
@@ -73,11 +75,10 @@ function CitiesSection({ exploreLabel = "Explore Cities" }) {
         </div>
 
         {/* ✅ Button */}
-        <ArrowButton label={"Explore All Cities"} onClick={handleExploreCities} />
-
+        <ArrowButton label={"Explore All Cities"} />
         {/* ✅ Paper Plane */}
-        <img src={citiesPaperPlane} alt="Paper Plane" className="paper-arrow-plane" />
       </div>
+      <WaveDividerLayout position="bottom" hideWave={false} hideBoat={true} />
     </div>
   );
 }

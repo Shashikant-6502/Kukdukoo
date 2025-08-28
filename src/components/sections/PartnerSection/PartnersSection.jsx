@@ -5,7 +5,7 @@ import leftArm from '../../../assets/images/left-arm.png';
 import rightArm from '../../../assets/images/right-arm.png';
 import './PartnerSection.css';
 import arrowButton from '../../../assets/images/black-arrow-button.png';
-
+import WaveDividerLayout from '../../layout/WaveDividerLayout';
 function PartnersSection() {
   const navigate = useNavigate();
 
@@ -15,24 +15,7 @@ function PartnersSection() {
 
   return (
     <section className="partners-section">
-      <div className="wave-divider-partner wave-top">
-        <svg
-          viewBox="0 0 1440 320"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#ffffff"
-            d="
-              M0,160 
-              C 120,80 240,240 360,160
-              C 480,80 600,240 720,160
-              C 840,80 960,240 1080,160
-              C 1200,80 1320,240 1440,160
-              L1440,320 L0,320 Z"
-          />
-        </svg>
-      </div>
+      <WaveDividerLayout position="top" boatPosition="left-boat"/>
       <h2 className='curved-heading'>
          <img src={leftArm} className='partner-icon'></img>
         <span className='curved-text'> OUR PARTNERS</span>
