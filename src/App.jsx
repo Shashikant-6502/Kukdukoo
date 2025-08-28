@@ -7,7 +7,7 @@ import ContactPage from './pages/ContactPage';
 import TicketsPage from './pages/TicketsPage';
 import Header from './components/common/Header/Header';
 import Footer from './components/common/Footer/Footer';
-import './style.css'; // Ensure this file exists and is imported
+import './style.css'; 
 function App() {
   return (
     <Router>

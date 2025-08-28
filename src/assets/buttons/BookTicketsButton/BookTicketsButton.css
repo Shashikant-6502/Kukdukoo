@@ -1,7 +1,7 @@
 .book-tickets-button {
-  width: 200px;
+  padding: 0 12px;
   height: 45px;
-  background-color: #ec5e5e;
+  background-color: #ec5e5e;   /* 🔴 default red */
   border: 2px solid black;
   border-radius: 20px;
   font-weight: bold;
@@ -9,216 +9,330 @@
   cursor: pointer;
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out;
-  color: white;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
   font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
-  flex-shrink: 0; /* Prevent shrinking */
-  min-width: 0; /* Allow content to determine minimum width */
-
-  /* Center text */
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 0; /* ✅ fixed sticky top issue */
+  align-self: center; /* ✅ vertically center like header button */
+
+  /* ✅ Keep text on single line, never truncate */
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
+  box-sizing: border-box;
+}
+
+.book-tickets-button:hover {
+  transform: scale(1.05); /* ✅ smoother hover without flicker */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ✅ Active (green background) */
+.book-tickets-button.active,
+.nav-shrunk .book-tickets-button.active {
+  background-color: #28a745 !important; /* 💚 Green */
+  border-color: #1e7e34 !important;
+  color: #fff !important;
 }
 
 /* Shrunk book tickets button */
 .nav-shrunk .book-tickets-button {
-  width: 140px;
-  height: 45px;
-  font-size: 12px;
-  border-radius: 15px;
-  color: white;
-  background-color: #ec5e5e;
-  border: 2px solid #333;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex-shrink: 0;
-  min-width: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 50px;
+  min-width: 60px;
+  padding: 4px 6px;
 }
 
-.book-tickets-button:hover {
-  transform: translateY(-5px);
-}
-
-.nav-shrunk .book-tickets-button:hover {
-  transform: translateY(-2px);
-}
-
-/* Mobile responsive styles */
-.nav-container.mobile .book-tickets-button {
-  width: 110px;
-  height: 40px;
-  font-size: 8px;
-  border-radius: 12px;
-  color: white;
-  background-color: #ec5e5e;
-  border: 2px solid #333;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
-  white-space: nowrap;
-  overflow: visible;
-  text-overflow: clip;
-  flex-shrink: 0;
-  min-width: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-container.mobile .book-tickets-button:hover {
-  transform: translateY(-1px);
-}
-
-/* Responsive design for tablets */
+/* Tablet */
 @media (max-width: 1024px) {
   .book-tickets-button {
-    width: 180px;
-    height: 40px;
     font-size: 14px;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
-    font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 40px;
+    padding: 0 10px;
   }
-
-  /* Tablet shrunk state */
   .nav-shrunk .book-tickets-button {
-    width: 120px;
-    height: 45px;
     font-size: 11px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex-shrink: 0;
-    min-width: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 50px; /* ✅ Match header button height */
+    padding: 0 8px;
+    margin-top: 0;
   }
 }
 
-/* Responsive design for mobile devices */
+/* Mobile */
 @media (max-width: 768px) {
   .book-tickets-button {
-    width: 180px;
-    height: 45px;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
-    flex-shrink: 0;
-    min-width: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Mobile shrunk state */
-  .nav-shrunk .book-tickets-button {
-    width: 100px;
+    font-size: 13px;
     height: 40px;
-    font-size: 7px;
-    background-color: #ec5e5e;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
-    flex-shrink: 0;
-    min-width: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0 8px;
+  }
+  .nav-shrunk .book-tickets-button {
+    font-size: 10px;
+    height: 50px; /* ✅ Match header button height */
+    padding: 0 6px;
+    margin-top: 0;
   }
 }
 
-/* Extra small screens */
+/* Small phones */
 @media (max-width: 480px) {
   .book-tickets-button {
-    width: 150px;
-    height: 40px;
     font-size: 12px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
-    flex-shrink: 0;
-    min-width: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 38px;
+    padding: 0 6px;
   }
-
-  /* Extra small shrunk state */
   .nav-shrunk .book-tickets-button {
-    width: 80px;
-    height: 35px;
-    font-size: 6px;
-    color: white;
-    background-color: #ec5e5e;
-    border: 2px solid #333;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
-    flex-shrink: 0;
-    min-width: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 9px;
+    height: 50px; 
+    padding: 0 5px;
   }
 }
 
-/* Very small screens */
+/* Extra small (412px and below) */
+@media (max-width: 412px) {
+  .book-tickets-button {
+    font-size: 11px;
+    height: 36px;
+    padding: 0 5px;
+  }
+  .nav-shrunk .book-tickets-button {
+    font-size: 8px;
+    height: 50px;
+    padding: 0 4px;
+  }
+}
+
+/* Very small devices */
 @media (max-width: 360px) {
+  .book-tickets-button {
+    font-size: 10px;
+    height: 34px;
+    padding: 0 4px;
+  }
   .nav-shrunk .book-tickets-button {
-    width: 70px;
-    height: 30px;
-    font-size: 5px;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
-    flex-shrink: 0;
-    min-width: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 7px;
+    height: 50px;
+    padding: 0 3px;
   }
 }
 
-/* Ultra small screens */
-@media (max-width: 320px) {
-  .nav-shrunk .book-tickets-button {
-    width: 60px;
-    height: 28px;
-    font-size: 4px;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
-    flex-shrink: 0;
-    min-width: 0;
+.header-button {
+  min-width: 80px;   /* ✅ Reduced minimum width for small screens */
+  max-width: 200px;
+  width: auto;
+  height: 100px;
+  border: 2px solid #333;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  background: #6CCEFF;
+  flex: 1 1 100px;   /* ✅ Reduced flex basis for better fit */
+  overflow: hidden; /* ✅ Prevent icon overflow */
+  box-sizing: border-box; /* ✅ Include border in width calculation */
+  padding: 8px 4px; /* ✅ Add padding to prevent icon overflow */
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.nav-shrunk .header-button {
+  height: 50px;
+  flex-direction: row;
+  gap: 8px;
+  border-radius: 15px;
+  padding: 4px 6px; /* ✅ Adjust padding for shrunk state */
+}
+
+.header-button:hover {
+  transform: scale(1.05); /* ✅ smoother hover without flicker */
+  border: 3px solid #999;
+  box-shadow: 0 8px 16px rgba(102, 102, 102, 0.2);
+}
+
+.nav-shrunk .header-button:hover {
+  transform: scale(1.03); /* ✅ small scale on hover when shrunk */
+}
+
+/* ✅ active = green */
+.header-button.active {
+  background-color: #CFF468;
+  border: 2px solid white;
+  color: white;
+}
+
+.header-button-icon {
+  width: 50px;
+  height: 40px;
+  margin-bottom: 6px;
+  transition: all 0.3s ease-in-out;
+  max-width: 100%; /* ✅ Ensure icon doesn't overflow */
+  max-height: 100%; /* ✅ Ensure icon doesn't overflow */
+  object-fit: contain; /* ✅ Maintain aspect ratio */
+}
+
+.nav-shrunk .header-button-icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0;
+}
+
+.header-button p {
+  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  white-space: nowrap;   /* ✅ Prevent text wrapping */
+  word-break: keep-all;
+  text-align: center;
+  overflow: visible; /* ✅ Allow text to be fully visible */
+  text-overflow: unset; /* ✅ Remove ellipsis */
+  max-width: none; /* ✅ Allow text to extend if needed */
+}
+
+.nav-shrunk .header-button p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ===========================
+   📱 Mobile responsive styles
+   =========================== */
+
+@media (max-width: 768px) {
+  .header-button {
+    min-width: 70px;
+    height: 90px;
+    flex: 1 1 80px;
+    padding: 6px 3px; /* ✅ Reduce padding for mobile */
+  }
+  
+  .header-button-icon {
+    width: 40px;
+    height: 32px;
+  }
+  
+  .header-button p {
+    font-size: 14px;
+  }
+  
+  .nav-shrunk .header-button {
+    height: 50px;
+    min-width: 60px;
+    padding: 3px 4px;
+    gap: 2px; 
+  }
+  
+  .nav-shrunk .header-button-icon {
+    width: 28px;  
+    height: 28px;
+  }
+  
+  .nav-shrunk .header-button p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-button {
+    min-width: 60px;
+    height: 80px;
+    flex: 1 1 70px;
+    padding: 5px 2px;
+  }
+  
+  .header-button-icon {
+    width: 35px;
+    height: 28px;
+  }
+  
+  .header-button p {
+    font-size: 7px;
+  }
+  
+  .nav-shrunk .header-button {
+    height: 50px;
+    min-width: 50px;
+    padding: 2px 3px;
+    gap: 2px;
+  }
+  
+  .nav-shrunk .header-button-icon {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .nav-shrunk .header-button p {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 412px) {
+  .header-button {
+    min-width: 50px;
+    height: 70px;
+    flex: 1 1 50px;
+    padding: 4px 2px;
+  }
+  
+  .header-button-icon {
+    width: 30px;
+    height: 24px;
+  }
+  
+  .header-button p {
+    font-size: 7px;
+  }
+  
+  .nav-shrunk .header-button {
+    height: 50px;
+    min-width: 50px;
+    padding: 1px 2px;
+    gap: 2px; 
+  }
+  
+  .nav-shrunk .header-button-icon {
+    width: 24px; 
+    height: 24px;
+  }
+  
+  .nav-shrunk .header-button p {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-button {
+    min-width: 45px;
+    height: 65px;
+    flex: 1 1 55px;
+    padding: 3px 1px;
+  }
+  
+  .header-button-icon {
+    width: 28px;
+    height: 22px;
+  }
+  
+  .header-button p {
+    font-size: 7px;
+  }
+  
+  .nav-shrunk .header-button {
+    height: 50px;
+    min-width: 40px;
+    padding: 1px 2px;
+    gap: 0; 
+  }
+  
+  .nav-shrunk .header-button-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .nav-shrunk .header-button p {
+    font-size: 7px;
   }
 }

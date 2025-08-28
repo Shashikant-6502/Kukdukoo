@@ -1,0 +1,60 @@
+.arrow-button {
+    background-color: #d4ff65;
+    border: 2px solid #000;
+    border-radius: 25px; /* same as explore button */
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #000; /* shadow */
+    transition: all 0.2s ease;
+    margin-top: 2rem;
+    width: auto; /* ✅ button expands based on text */
+    min-width: 160px; /* ✅ base size for short labels */
+    font-family: var(--font-super-comic) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  
+    /* ✅ Prevent wrapping/truncation */
+    white-space: nowrap;
+    overflow: visible; 
+    text-overflow: unset;
+  }
+  
+  .arrow-button:hover {
+    background-color: #b6f052;
+    transform: scale(1.05);
+  }
+  
+  .arrow-icon {
+    width: 20px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* ✅ Tablet */
+  @media (max-width: 768px) {
+    .arrow-button {
+      font-size: 0.9rem;
+      padding: 0.7rem 1.2rem;
+      min-width: 140px;
+    }
+    .arrow-icon {
+      width: 18px;
+    }
+  }
+  
+  /* ✅ Mobile */
+  @media (max-width: 480px) {
+    .arrow-button {
+      font-size: 0.85rem;
+      padding: 0.6rem 1rem;
+      min-width: 120px;
+    }
+    .arrow-icon {
+      width: 16px;
+    }
+  }
+  

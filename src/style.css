@@ -6,12 +6,113 @@
     font-style: normal;
 }
 
+/* Import Creato Display fonts */
+@font-face {
+    font-family: 'Creato Display';
+    src: url('./assets/fonts/CreatoDisplay-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('./assets/fonts/CreatoDisplay-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('./assets/fonts/CreatoDisplay-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('./assets/fonts/CreatoDisplay-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('./assets/fonts/CreatoDisplay-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Creato Display';
+    src: url('./assets/fonts/CreatoDisplay-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* CSS Custom Properties for Fonts */
+:root {
+    /* Font Families */
+    --font-super-comic: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+    --font-creato-display: 'Creato Display', sans-serif;
+    
+    /* Font Weights for Creato Display */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+    --font-weight-black: 900;
+}
+
+/* Utility Classes for Fonts */
+.font-super-comic {
+    font-family: var(--font-super-comic);
+}
+
+.font-creato-display {
+    font-family: var(--font-creato-display);
+}
+
+/* Utility Classes for Creato Display Weights */
+.font-light {
+    font-family: var(--font-creato-display);
+    font-weight: var(--font-weight-light);
+}
+
+.font-regular {
+    font-family: var(--font-creato-display);
+    font-weight: var(--font-weight-regular);
+}
+
+.font-medium {
+    font-family: var(--font-creato-display);
+    font-weight: var(--font-weight-medium);
+}
+
+.font-bold {
+    font-family: var(--font-creato-display);
+    font-weight: var(--font-weight-bold);
+}
+
+.font-extra-bold {
+    font-family: var(--font-creato-display);
+    font-weight: var(--font-weight-extra-bold);
+}
+
+.font-black {
+    font-family: var(--font-creato-display);
+    font-weight: var(--font-weight-black);
+}
+
 /* Global Styles & Body */
 body {
     margin: 0;
     font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif; /* Apply Super Comic font */
     background-color: white;
     min-height: 100vh;
+    overflow-x: hidden; /* ✅ Prevent horizontal scrolling */
+    width: 100vw;
+    max-width: 100vw;
 }
 
 /* Apply Super Comic font to all text elements */
@@ -26,11 +127,21 @@ body {
   max-width: 100vw;
 }
 
+/* Prevent horizontal overflow on all elements */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
 /* App container */
 .app-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100vw;
 }
 
 /* Main app layout */
@@ -38,6 +149,9 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100vw;
 }
 
 /* Page content wrapper */
@@ -47,6 +161,9 @@ main {
     min-height: calc(100vh - 160px - 300px); /* Account for header and footer */
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100vw;
 }
 
 /* Header & Navigation */
@@ -56,6 +173,9 @@ main {
     justify-content: center;
     align-items: center;
     padding: 10px 0;
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100vw;
 }
 
 /* Hero Section */
@@ -64,6 +184,9 @@ main {
     text-align: center;
     color: white;
     margin-top: -160px; /* Offset the page-content padding for hero - adjusted for shorter header */
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100vw;
 }
 
 .hero-image {
@@ -522,9 +645,4 @@ main {
   height: 15px;
   border-bottom: 3px solid black;
   border-radius: 30%;
-}
-
-html, body {
-  overflow-x: hidden;
-  width: 100vw;
 }

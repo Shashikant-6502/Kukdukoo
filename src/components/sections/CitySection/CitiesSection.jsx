@@ -1,7 +1,13 @@
 import React from 'react';
-import './CitySection.css';
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination, Autoplay } from 'swiper/modules';
+
+import './CitySection.css';
 import citiesData from '../../../data/citiesData.json';
+
 import leftLocationIcon from '../../../assets/images/left-side-location-icon.png';
 import rightLocationIcon from '../../../assets/images/right-side-location-icon.png';
 import bengluru from '../../../assets/images/bengluru-icon.png';
@@ -9,98 +15,70 @@ import hyderabad from '../../../assets/images/Hyderabad-icon.png';
 import mumbai from '../../../assets/images/mumbai-icon.png';
 import pune from '../../../assets/images/pune-icon.png';
 import noida from '../../../assets/images/noida-icon.png';
-import lineStyle from '../../../assets/images/dashed-lines-icon.png';
 import citiesPaperPlane from '../../../assets/images/cities-paper-plane-icon.png';
-function CitiesSection() {
+import ArrowButton from "../../../assets/buttons/greenButton/greenButton";
 
-    const cityIcon = {
-      'bengluru-icon.png': bengluru,
-      'hyderabad-icon.png': hyderabad,
-      'mumbai-icon.png': mumbai,
-      'pune-icon.png': pune,
-      'noida-icon.png': noida,
-    };
-  const navigate = useNavigate();
-
-  const handleExploreCities = () => {
-    // For now, navigate to home page since there's no specific cities page
-    navigate('/');
+function CitiesSection({ exploreLabel = "Explore Cities" }) {
+  const cityIcon = {
+    'bengluru-icon.png': bengluru,
+    'hyderabad-icon.png': hyderabad,
+    'mumbai-icon.png': mumbai,
+    'pune-icon.png': pune,
+    'noida-icon.png': noida,
   };
 
-  return (
-    <section className="city-section">
-      <img src={citiesPaperPlane} alt="Paper Arrow" className="paper-arrow-plane" />
-      {/* Top Wave */}
-      <div className="wave-divider-city wave-top">
-        <svg
-          viewBox="0 0 1440 320"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#ffffff"
-            d="
-              M0,160 
-              C 120,80 240,240 360,160
-              C 480,80 600,240 720,160
-              C 840,80 960,240 1080,160
-              C 1200,80 1320,240 1440,160
-              L1440,320 L0,320 Z"
-          />
-        </svg>
-      </div>
+  const navigate = useNavigate();
+  const handleExploreCities = () => navigate('/');
 
-      {/* Section Content */}
-      <div className="curve-line">
-      <img src={lineStyle} alt="line style"/>
-      </div>
+  return (
+    <div className="city-section">
       <div className="section-content">
-        <h2 className='curved-heading'>
-          <img src={leftLocationIcon} alt="left Location Icon" className="location-icon" />
-           <span className="curved-text">CITIES WE ARE GOING TO</span>
-          <img src={rightLocationIcon} alt="right Location Icon" className="location-icon" />
+        <h2>
+          <img src={leftLocationIcon} alt="Location" className="location-icon" />
+          {exploreLabel}
+          <img src={rightLocationIcon} alt="Location" className="location-icon" />
         </h2>
 
-       <div className="cities-grid">
-  {citiesData.cities.map((city, index) => (
-    <div key={index} className="city-card">
-      <img
-        src={cityIcon[city.icon]}
-        alt={city.name}
-        className="city-icon"
-      />
-      <div className="city-name">{city.name}</div>
-      <div className="city-date">{city.date}</div>
+        {/* ✅ Desktop/Tablet Static Grid (Web) */}
+        <div className="cities-grid">
+          {citiesData.cities.map((city, index) => (
+            <div className="city-card" key={index}>
+              <img src={cityIcon[city.icon]} alt={city.name} className="city-icon" />
+              <div className="city-name">{city.name}</div>
+              <div className="city-date">{city.date}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* ✅ Mobile Swiper (hidden on web) */}
+        <div className="cities-swiper">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={15}
+            slidesPerView="auto"
+            loop={true}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+          >
+            {citiesData.cities.map((city, index) => (
+              <SwiperSlide key={index}>
+                <div className="city-card">
+                  <img src={cityIcon[city.icon]} alt={city.name} className="city-icon" />
+                  <div className="city-name">{city.name}</div>
+                  <div className="city-date">{city.date}</div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* ✅ Button */}
+        <ArrowButton label={"Explore All Cities"} onClick={handleExploreCities} />
+
+        {/* ✅ Paper Plane */}
+        <img src={citiesPaperPlane} alt="Paper Plane" className="paper-arrow-plane" />
+      </div>
     </div>
-  ))}
-</div>
-
-
-        <button className="explore-btn" onClick={handleExploreCities}>
-          Explore Cities ➝
-        </button>
-      </div>
-
-      {/* Bottom Wave */}
-      <div className="wave-divider-city wave-bottom">
-        <svg
-          viewBox="0 0 1440 320"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#ffffff"
-            d="
-              M0,160 
-              C 120,80 240,240 360,160
-              C 480,80 600,240 720,160
-              C 840,80 960,240 1080,160
-              C 1200,80 1320,240 1440,160
-              L1440,320 L0,320 Z"
-          />
-        </svg>
-      </div>
-    </section>
   );
 }
 
