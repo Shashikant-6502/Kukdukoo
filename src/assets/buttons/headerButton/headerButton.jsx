@@ -1,5 +1,5 @@
 import React from "react";
-import "./HeaderButton.css";
+import "./headerButton.css";
 
 const HeaderButton = ({ icon, activeIcon, label, onClick, isActive }) => {
   const displayIcon = isActive && activeIcon ? activeIcon : icon;
