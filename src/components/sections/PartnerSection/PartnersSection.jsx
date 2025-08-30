@@ -6,6 +6,7 @@ import rightArm from '../../../assets/images/right-arm.png';
 import './PartnerSection.css';
 import arrowButton from '../../../assets/images/black-arrow-button.png';
 import WaveDividerLayout from '../../layout/WaveDividerLayout';
+import ArrowButton from '../../../assets/buttons/greenButton/greenButton';
 function PartnersSection() {
   const navigate = useNavigate();
 
@@ -28,11 +29,7 @@ function PartnersSection() {
           </div>
         ))}
       </div>
-      
-      <button className="partner-btn" onClick={handlePartnerWithUs}>
-        <span>PARTNER WITH US </span>
-         <img src={arrowButton} alt="Arrow" className="btn-icon" />
-      </button>
+      <ArrowButton label={"PARTNER WITH US"}  />
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
 import playButton from '../../../assets/images/play-button.png';
 import arrowButton from '../../../assets/images/arrow-button.png';
-import staticImage from '../../../assets/images/staticImage.png'; // 👈 fallback image
+import staticImage from '../../../assets/images/staticImage.png';
 import WaveDividerLayout from '../../layout/WaveDividerLayout';
 function HeroSection() {
   const navigate = useNavigate();

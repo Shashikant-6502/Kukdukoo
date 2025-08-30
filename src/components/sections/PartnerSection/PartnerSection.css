@@ -8,7 +8,6 @@
   border-width: 3px;
 }
 
-
 .partners-section {
   background-color: #c8f0ff;
   padding: 80px 20px;
@@ -26,8 +25,9 @@
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
+
 .partners-grid {
-display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
   gap: 1.5rem;
   margin-bottom: 2rem;
@@ -36,7 +36,7 @@ display: grid;
 }
 
 .partner-card {
- background-color: #fff;
+  background-color: #fff;
   border: 2px solid #000;
   border-radius: 12px;
   width: 120px;
@@ -71,12 +71,6 @@ display: grid;
   background-color: #b6f052;
   transform: scale(1.05);
 }
-.btn-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    position: absolute;
-    right: 20px;}
 
 /* ===== RESPONSIVE DESIGN ===== */
 
@@ -117,8 +111,31 @@ display: grid;
   .partners-section h2 {
     font-size: 1.5rem;
     margin-bottom: 1.2rem;
-    flex-direction: column;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 0.3rem;
+  }
+
+  /* Hands icons left & right of heading */
+  .partners-section h2::before,
+  .partners-section h2::after {
+    content: "";
+    display: inline-block;
+    width: 25px;   /* smaller icon size */
+    height: 25px;
+    background: url('hand-icon.png') no-repeat center center; /* replace with your muscle hand image */
+    background-size: contain;
+  }
+
+  .partners-section h2::before {
+    margin-right: 0.4rem;
+  }
+
+  .partners-section h2::after {
+    margin-left: 0.4rem;
+    transform: scaleX(-1); /* flips right-hand */
   }
 
   .partners-grid {
@@ -148,6 +165,13 @@ display: grid;
   .partners-section h2 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
+  }
+
+  /* even smaller hands for very small screens */
+  .partners-section h2::before,
+  .partners-section h2::after {
+    width: 20px;
+    height: 20px;
   }
 
   .partners-grid {

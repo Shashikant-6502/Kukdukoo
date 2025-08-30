@@ -1,6 +1,7 @@
 import React from "react";
 import StoreIndex from '../../sections/storeSection/storeIndex.jsx';
 import './StoreSection.css';
+
 export default function StoreSection(props) {
   return (
     <section className="store-section">
