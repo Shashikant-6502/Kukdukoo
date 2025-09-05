@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
-import "./FAQ.css";
+import "./faq.css";
 import faqsData from "./faq.json"; // JSON file
 import WaveDividerLayout from "../../layout/WaveDividerLayout";
+import leftArrowIcon from "../../../assets/images/left-arrow-icon.png";
+import rightArrowIcon from "../../../assets/images/right-arrow-icon.png";
 
 export default function Faq() {
   const [faqs, setFaqs] = useState([]);
   const [openIndex, setOpenIndex] = useState(null);
   const [page, setPage] = useState(0); // track current page
-  const faqsPerPage = 7;
+  const faqsPerPage = 8;
 
   useEffect(() => {
     setFaqs(faqsData); // load from JSON
   }, []);
 
   const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+    // fix index: make it relative to the whole list, not just current page
+    const globalIndex = page * faqsPerPage + index;
+    setOpenIndex(openIndex === globalIndex ? null : globalIndex);
   };
 
   // Pagination logic
@@ -22,18 +26,44 @@ export default function Faq() {
   const startIndex = page * faqsPerPage;
   const currentFaqs = faqs.slice(startIndex, startIndex + faqsPerPage);
 
-  const goToPage = (newPage) => {
-    if (newPage >= 0 && newPage < totalPages) {
-      setPage(newPage);
-      setOpenIndex(null); // close all when switching page
+  // ✅ Add missing pagination handlers
+  const handlePrev = () => {
+    if (page > 0) {
+      setPage(page - 1);
+      setOpenIndex(null); // close all FAQs when page changes
     }
   };
 
-  return (
-    <section className="faq-section">
-      <WaveDividerLayout position="top" boatPosition="left-boat"/>
+  const handleNext = () => {
+    if (page < totalPages - 1) {
+      setPage(page + 1);
+      setOpenIndex(null);
+    }
+  };
 
-      <h2 className="faq-title">Frequently Asked Questions</h2>
+  const goToPage = (i) => {
+    setPage(i);
+    setOpenIndex(null);
+  };
+
+return (
+  <section className="faq-section">
+    <WaveDividerLayout position="top" hideWave={false} hideBoat={false} />
+    <h2 className="faq-title">
+      <span className="question-mark">?</span>
+      Frequently Asked Questions
+      <span className="question-mark">?</span>
+</h2>
+    {/* Container with Arrows + FAQ */}
+    <div className="faq-container">
+      {/* Left Arrow */}
+      <button
+        className="faq-arrow left"
+        onClick={handlePrev}
+        disabled={page === 0}
+      >
+        <img src={leftArrowIcon} alt="Left" />
+      </button>
 
       {/* FAQ List */}
       <div className="faq-list">
@@ -44,48 +74,40 @@ export default function Faq() {
               onClick={() => toggleFAQ(index)}
             >
               {faq.id}. {faq.question}
-              <span>{openIndex === index ? "▲" : "▼"}</span>
+              <span>
+                {openIndex === page * faqsPerPage + index ? "▲" : "▼"}
+              </span>
             </button>
-            {openIndex === index && (
+            {openIndex === page * faqsPerPage + index && (
               <p className="faq-answer">{faq.answer}</p>
             )}
           </div>
         ))}
-      </div>
 
-      {/* Pagination Controls */}
-      <div className="faq-pagination">
-        <button
-          className="arrow-btn"
-          onClick={() => goToPage(page - 1)}
-          disabled={page <= 0}
-          style={{ opacity: page <= 0 ? 0.5 : 1, cursor: page <= 0 ? 'not-allowed' : 'pointer' }}
-        >
-          ◀
-        </button>
-
+        {/* Dots inside FAQ box (centered below) */}
         <div className="dots">
           {Array.from({ length: totalPages }).map((_, i) => (
             <span
               key={i}
               className={`dot ${i === page ? "active" : ""}`}
               onClick={() => goToPage(i)}
-              style={{ cursor: i === page ? 'default' : 'pointer' }}
+              style={{ cursor: i === page ? "default" : "pointer" }}
             ></span>
           ))}
         </div>
-
-        <button
-          className="arrow-btn"
-          onClick={() => goToPage(page + 1)}
-          disabled={page >= totalPages - 1}
-          style={{ opacity: page >= totalPages - 1 ? 0.5 : 1, cursor: page >= totalPages - 1 ? 'not-allowed' : 'pointer' }}
-        >
-          ▶
-        </button>
       </div>
 
-      <WaveDividerLayout position="bottom" hideBoat={true} />
-    </section>
-  );
+      {/* Right Arrow */}
+      <button
+        className="faq-arrow right"
+        onClick={handleNext}
+        disabled={page === totalPages - 1}
+      >
+        <img src={rightArrowIcon} alt="Right" />
+      </button>
+    </div>
+
+    <WaveDividerLayout position="bottom" hideBoat={true} />
+  </section>
+);
 }

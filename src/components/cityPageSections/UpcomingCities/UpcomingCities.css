@@ -1,0 +1,18 @@
+.upcoming-cities-section {
+  padding: 40px 0;
+  background: #f7fffb;
+  text-align: center;
+}
+
+.upcoming-cities-heading {
+  font-size: 2.5em;
+  font-weight: 800;
+  color: #2a6ebb;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}

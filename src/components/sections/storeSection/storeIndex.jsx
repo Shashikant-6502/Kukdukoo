@@ -30,8 +30,7 @@ export default function StoreSection() {
   };
 
   const handleNavigation = (path) => {
-    // Add navigation logic here
-    console.log('Navigating to:', path);
+    Navigator('/tickets')
   };
 
   return (
