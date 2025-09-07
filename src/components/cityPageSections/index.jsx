@@ -3,7 +3,7 @@ import VideoHighlight from './VideoHighlight/VideoHighlight';
 import StoreSection from './StoreSection/StoreSection';
 import OurPartners from './OurPartners/OurPartners';
 import FestivalSchedule from './FestivalSchedule/FestivalSchedule';
-import Faq from './Faq/Faq';
+import Faq from '../../components/cityPageSections/FAQ/Faq';
 import UpcomingCities from './UpcomingCities/UpcomingCities';
 import CityInfo from './CityInfo/CityInfo';
 
