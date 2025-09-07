@@ -10,8 +10,12 @@ import trophyIcon from '../../../assets/images/trophy-icon.png';
 import paperArrow from '../../../assets/images/paper-arrow-icon.png';
 import './AchievementsSection.css';
 
+// Swiper imports
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
 function AchievementsSection() {
-  // Create a mapping object for icons
   const iconMap = {
     'star-medal-icon.png': starMedalIcon,
     'cup-icon.png': cupIcon,
@@ -23,28 +27,51 @@ function AchievementsSection() {
 
   return (
     <section className="achievements-section">
-       <img src={paperArrow} alt="Paper Arrow" className="paper-arrow" />
+      <img src={paperArrow} alt="Paper Arrow" className="paper-arrow" />
       <h2 className='curved-heading'>
-        <img src={star} alt="Star Icon" className='star-icon'></img>
+        <img src={star} alt="Star Icon" className='star-icon' />
         <span className='curved-text'>FESTIVALS ACHIEVEMENTS</span>
-        <img src={star} alt=" Icon" className='star-icon'></img>
-        </h2>
-      <div className="achievements-grid">
+        <img src={star} alt="Star Icon" className='star-icon' />
+      </h2>
+
+      {/* ==== WEB/TABLET GRID ==== */}
+      <div className="achievements-grid achievements-desktop">
         {achievementsData.achievements.map((item, index) => (
           <div key={index} className="achievement-item">
-             {item.icon && iconMap[item.icon] && (
-              <img
-                src={iconMap[item.icon]}
-                alt={item.label}
-                className="achievement-icon"
-              />
+            {item.icon && iconMap[item.icon] && (
+              <img src={iconMap[item.icon]} alt={item.label} className="achievement-icon" />
             )}
             <p className='achievement-value'>{item.value}</p>
             <p>{item.label}</p>
           </div>
         ))}
       </div>
+
+      {/* ==== MOBILE SWIPER ==== */}
+      <div className="achievements-swiper">
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={15}
+          slidesPerView={'auto'}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          loop={true}
+          grabCursor={true}
+        >
+          {achievementsData.achievements.map((item, index) => (
+            <SwiperSlide key={index} style={{ width: "160px" }}>
+              <div className="achievement-item">
+                {item.icon && iconMap[item.icon] && (
+                  <img src={iconMap[item.icon]} alt={item.label} className="achievement-icon" />
+                )}
+                <p className='achievement-value'>{item.value}</p>
+                <p>{item.label}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 }
+
 export default AchievementsSection;
