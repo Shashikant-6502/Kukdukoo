@@ -1,14 +1,12 @@
 import React from "react";
 import "./AllCitiesIcon.css";
 
-// Example data (replace icons with your actual image imports)
 import mumbaiIcon from "../../assets/images/mumbai-icon.png";
 import puneIcon from "../../assets/images/pune-icon.png";
 import bengaluruIcon from "../../assets/images/bengluru-icon.png";
 import noidaIcon from "../../assets/images/noida-icon.png";
 import hyderabadIcon from "../../assets/images/Hyderabad-icon.png";
-import backgroundPath from "../../assets/images/background-path.png";
-import cockLocationIcon from '../../assets/images/location-icon-with-cock.png';
+import backgroundPath from "../../assets/images/explore-cities-background-location-icon.png";
 
 const pathOneCities = [
   {
@@ -32,9 +30,6 @@ const pathOneCities = [
     venue: "Oakridge International School",
     icon: bengaluruIcon,
   },
-];
-
-const pathTwoCities = [
   {
     id: 4,
     name: "Noida",
@@ -42,25 +37,25 @@ const pathTwoCities = [
     venue: "To Be Announced",
     icon: noidaIcon,
   },
-  {
+    {
     id: 5,
+    name: "Jaipur",
+    date: "20th & 21st Dec'25",
+    venue: "To Be Announced",
+    icon: noidaIcon,
+  },
+  {
+    id: 6,
     name: "Hyderabad",
     date: "24th & 25th Jan'25",
     venue: "To Be Announced",
     icon: hyderabadIcon,
   },
-  {
-    id: 6,
-    name: "Noida",
-    date: "20th & 21st Dec'25",
-    venue: "To Be Announced",
-    icon: noidaIcon,
-  },
+
 ];
 
 // City class names for positioning (match CSS)
-const pathOneClassNames = ["mumbai", "pune", "bengaluru"];
-const pathTwoClassNames = ["noida", "hyderabad"];
+const pathOneClassNames = ["mumbai", "pune", "bengaluru","noida","hyderabad","Jaipur"];
 
 export default function AllCitiesIcon() {
   const handleNavigation = (url) => {
@@ -69,65 +64,35 @@ export default function AllCitiesIcon() {
 
   return (
     <section className="all-cities-icon-section">
+      <img src={backgroundPath} alt="Path" className="background-path" />
       {/* First path */}
       <div className="path-wrapper">
-        <img src={backgroundPath} alt="Path" className="background-path" />
         <div className="cities-on-path">
-          {pathOneCities.map((city, idx) => (
-            <div
-              key={city.id}
-              className={`event-city-card ${pathOneClassNames[idx]}${idx === 1 ? ' special-card' : ''}`}
-            >
-              <div className="event-city-row">
-                <img src={cockLocationIcon} alt="Location" className="location-path" />
-                <div className="event-city-details">
-                  <h3 className="event-city-name">{city.name}</h3>
-                  <p className="event-city-date">{city.date}</p>
-                  <p className="event-city-venue">{city.venue}</p>
-                </div>
-                <div className="event-city-icon-col">
-                  <img src={city.icon} alt={city.name} className="city-icon" />
-                  <button
-                    className="book-tickets-button"
-                    onClick={() => handleNavigation("/tickets")}
-                  >
-                    BOOK TICKETS
-                  </button>
+          {pathOneCities.map((city, idx) => {
+            return (
+              <div
+                key={city.id}
+                className={`event-city-card ${pathOneClassNames[idx]}`}
+              >
+                <div className="event-city-row"> 
+                                   <div className="event-city-details">
+                    <h3 className="event-city-name">{city.name}</h3>
+                    <p className="event-city-date">{city.date}</p>
+                    <p className="event-city-venue">{city.venue}</p>
+                  </div>
+                  <div className="event-city-icon-col">
+                    <img src={city.icon} alt={city.name} className="city-icon" />
+                    <button
+                      className="book-tickets-button-cities"
+                      onClick={() => handleNavigation("/tickets")}
+                    >
+                      BOOK TICKETS
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Second path  */}
-      <div className="path-wrapper">
-        <img src={backgroundPath} alt="Path" className="background-path" />
-        <div className="cities-on-path">
-          {pathTwoCities.map((city, idx) => (
-            <div
-              key={city.id}
-              className={`event-city-card ${pathOneClassNames[idx]}${idx === 1 ? ' special-card' : ''}`}
-            >
-              <div className="event-city-row">
-                <img src={cockLocationIcon} alt="Location" className="location-path" />
-                <div className="event-city-details">
-                  <h3 className="event-city-name">{city.name}</h3>
-                  <p className="event-city-date">{city.date}</p>
-                  <p className="event-city-venue">{city.venue}</p>
-                </div>
-                <div className="event-city-icon-col">
-                  <img src={city.icon} alt={city.name} className="city-icon" />
-                  <button
-                    className="book-tickets-button"
-                    onClick={() => handleNavigation("/tickets")}
-                  >
-                    BOOK TICKETS
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
