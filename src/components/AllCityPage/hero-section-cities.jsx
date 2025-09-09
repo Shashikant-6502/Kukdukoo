@@ -19,7 +19,7 @@ function HeroSection() {
 
   return (
     <section className="hero-section"
-    style=[{height: '350px'}]>
+    style={{height: '350px'}}>
       <div className="video-iframe-wrapper">
         {/* Static fallback image */}
         <img 
