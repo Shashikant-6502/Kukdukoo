@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import manchFrame from "../../../assets/images/manch-frame.png";
 import akkadFrame from "../../../assets/images/akkad-frame.png";
-import "./festivalSchedule.css";
+import "./FestivalSchedule.css";
 import leftArrowIcon from "../../../assets/images/left-arrow-icon.png";
 import rightArrowIcon from "../../../assets/images/right-arrow-icon.png";
 import clockIcon from "../../../assets/images/clock-icon.png";

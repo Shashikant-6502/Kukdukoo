@@ -31,6 +31,8 @@
   min-height: 280px;
 }
 
+
+
 /* Common styling for footer sections */
 .footer-section {
   display: flex;
@@ -251,18 +253,49 @@
     margin-bottom: 12px;
     justify-content: center;
   }
+
+  /* Mobile layout: Privacy policy centered, book tickets and social media in single row */
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-links {
+    order: 1;
+    width: 100%;
+  }
+
+  .footer-center {
+    order: 2;
+    width: 48%;
+    display: inline-block;
+  }
+
+  .footer-social {
+    order: 2;
+    width: 48%;
+    display: inline-block;
+    margin-left: 4%;
+  }
 }
 
 /* Small Mobile Styles (320px - 479px) */
 @media (max-width: 479px) {
   .footer-container {
-    min-height: 450px;
-  }
-  
-  .footer-content {
+    background-color: #d6f576; /* Green background */
+    min-height: 100vh; /* Full screen height */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spread content vertically */
+    align-items: center;
     padding: 20px 8px;
+  }
+
+  .footer-content {
+    margin-top: 200px;
     gap: 20px;
-    min-height: 400px;
+    min-height: auto; /* Removed fixed 400px */
   }
 
   .footer-section {
@@ -294,6 +327,5 @@
 
   .social-icons-container {
     gap: 8px;
-    margin-bottom: 10px;
   }
 }

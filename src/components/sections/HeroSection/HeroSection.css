@@ -29,7 +29,7 @@
 
 .hero-content {
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -40,13 +40,13 @@
     align-items: center;
     text-align: center;
     color: white;
-    padding-bottom: 100px;
+    padding-bottom: 10px;
 }
 
 /* Buttons container */
 .hero-buttons {
     position: absolute;
-    top: 55%;
+    top: 75%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -276,4 +276,20 @@
         height: 45px;
         font-size: 12px;
     }
+}
+
+/* ===== FIX WAVE DIVIDER LINE ===== */
+.wave-divider {
+    display: block;
+    line-height: 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wave-divider svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: -1px; /* removes thin line */
 }

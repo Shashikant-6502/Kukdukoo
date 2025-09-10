@@ -4,7 +4,7 @@
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  margin-top: -70px;
+  /* margin-top: -70px; */
 }
 
 /* Override global font for text only, not button */
