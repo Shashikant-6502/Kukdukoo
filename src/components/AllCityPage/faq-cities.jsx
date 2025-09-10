@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./faq.css";
-import faqsData from "./faq.json"; // JSON file
-import WaveDividerLayout from "../../layout/WaveDividerLayout";
-import leftArrowIcon from "../../../assets/images/left-arrow-icon.png";
-import rightArrowIcon from "../../../assets/images/right-arrow-icon.png";
+import "../cityPageSections/FAQ/faq.css";
+import faqsData from "../cityPageSections/FAQ/faq.json"; // JSON file
+import leftArrowIcon from "../../assets/images/left-arrow-icon.png";
+import rightArrowIcon from "../../assets/images/right-arrow-icon.png";
 
-export default function Faq() {
+export default function FaqCities() {
   const [faqs, setFaqs] = useState([]);
   const [openIndex, setOpenIndex] = useState(null);
   const [page, setPage] = useState(0); // track current page
@@ -48,7 +47,6 @@ export default function Faq() {
 
 return (
   <section className="faq-section">
-    <WaveDividerLayout position="top" hideWave={false} hideBoat={false} />
     <h2 className="faq-title">
       <span className="question-mark">?</span>
       Frequently Asked Questions
@@ -106,8 +104,6 @@ return (
         <img src={rightArrowIcon} alt="Right" />
       </button>
     </div>
-
-    <WaveDividerLayout position="bottom" hideBoat={true} />
   </section>
 );
 }

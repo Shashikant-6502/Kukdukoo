@@ -1,0 +1,124 @@
+.city-info-section {
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  border: 4px solid #000; 
+  border-radius: 8px; 
+background-color: #c8f0ff;
+overflow: hidden;
+ background-image: url("../../../assets/images/cloud-background.png");
+ background-repeat: no-repeat;
+  background-position: bottom center; /* place image at bottom */
+  background-size: 100% auto; /* stretch horizontally, keep aspect ratio */
+  
+  width: 100%;
+  height: 600px;
+ }
+
+.city-info-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.city-name-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #e63946;
+  margin-bottom: 10px;
+}
+
+.city-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.passes-banner {
+  background: #e63946;
+  color: #fff;
+  padding: 12px 25px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.city-icon {
+  display: flex;
+  justify-content: center; /* horizontally center */
+  align-items: center;     /* vertically center */
+  height: 100%;            /* make parent take full section height */
+}
+
+.city-icon img {
+  width: 200px;
+  margin: -100px;
+  padding: 0;
+  display: block;
+  height: 100%;   /* stretch image to match parent height */
+  object-fit: contain; /* keep aspect ratio */
+}
+
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.event-item img {
+  width: 28px;
+  height: 28px;
+}
+.grass {
+  position: absolute;
+  bottom: 0;
+  width: 120px;   /* adjust size */
+  height: auto;
+  z-index: 2;
+}
+
+/* Light green grass */
+.grass1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 180px;   /* increase width */
+  height: auto;
+  z-index: 2;
+}
+
+/* Dark green grass (flipped) */
+.grass2 {
+  position: absolute;
+  bottom: 0;
+  left: 120px;  /* position next to light green */
+  width: 150px;
+  height: auto;
+  transform: scaleX(-1); /* flip horizontally */
+  z-index: 2;
+}
+
+
+/* Right side grasses */
+.grass3 {
+  right: 90px;
+}
+.grass4 {
+  right: 0;
+}

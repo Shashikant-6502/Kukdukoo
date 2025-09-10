@@ -29,7 +29,7 @@ function CitiesSection({ exploreLabel = "Explore Cities" }) {
 
   const navigate = useNavigate();
   const handleExploreCities = () => {
-      navigate('/CityPage');
+      navigate('/AllCityPage');
   };
 
   return (

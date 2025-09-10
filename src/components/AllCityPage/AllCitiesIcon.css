@@ -1,0 +1,232 @@
+.path-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+ .all-cities-icon-section {
+   position: relative;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.background-path {
+display: block;
+width: 100%;
+
+}
+.cities-on-path {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+ }
+.city-icon {
+  width: 220px;
+  height:170px;
+  top: 1419px;
+  left: 932px; 
+  opacity: 1;
+  margin-bottom: 0;
+} */
+
+.event-city-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 520px;        
+  min-height: 180px;   
+  padding: 20px;
+  margin-bottom: 60px;  
+  z-index: 2;
+  
+}
+
+.event-city-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.event-city-details {
+  flex: 1;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 300px; 
+  margin-left: 200px; 
+}
+
+.event-city-name {
+  font-size: 2.5em;
+  font-weight: 900;
+  color: #e63946;
+  margin-bottom: 6px;
+}
+
+.event-city-date {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 6px;
+  margin-left: -50px;
+
+  background-image: url('../../assets/images/yellow-brush-background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  white-space: nowrap;
+  display: inline-block;
+  padding: 4px 10px;
+}
+
+.event-city-venue {
+  font-size: 1.1em;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.event-city-icon-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  height: 100px;
+  margin-left: 20px;
+}
+
+.city-icon {
+  width: 240px;
+  height: auto;
+  margin-bottom: -20px;
+}
+.book-tickets-button-cities { 
+  width: 225px;
+  margin-top:-25px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+   padding: 0 12px;
+  height: 45px;
+  background-color: #ec5e5e;   
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  align-self: center; 
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
+  box-sizing: border-box;
+ }
+.book-tickets-button-cities:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+.event-city-card.mumbai   { top: 350px;  right: 200px;width: 280px;
+padding-top: 100px;
+padding-left:100px ;
+margin-top:150px ;
+}
+.event-city-card.pune     { 
+margin-left: 200px;
+margin-top: 160px;
+margin-left: 350px;
+}
+.event-city-card.bengaluru{ margin-top: 200px; margin-left: 200px; }
+.event-city-card.noida    {margin-left: 180px;margin-top: 200px; }
+.event-city-card.hyderabad{margin-left: 360px;margin-top: 150px;  }
+.event-city-card.Jaipur   { margin-left: 100px;margin-top: 140px; }
+
+
+
+.event-city-card.mumbai .city-icon {
+  margin-top: 45px;
+margin-left: 45px;
+}
+.event-city-card.mumbai .book-tickets-button-cities { 
+  width: 230px;
+  margin-top:-25px;
+  border-radius: 10px;
+  margin-left: 45px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+ }
+.event-city-card.pune {
+
+  width: 260px;
+  margin-top: 110px;
+}
+
+.event-city-card.pune .event-city-name { }
+.event-city-card.pune .event-city-date { }
+.event-city-card.pune .event-city-venue {}
+.event-city-card.pune .city-icon {  }
+.event-city-card.pune .book-tickets-button-cities {  }
+.event-city-card.bengaluru {
+ margin-top: 150px;
+  width: 280px;
+}
+
+.event-city-card.bengaluru .event-city-name { }
+.event-city-card.bengaluru .event-city-date {  }
+.event-city-card.bengaluru .event-city-venue {  }
+.event-city-card.bengaluru .city-icon { 
+  margin-left: 45px;
+}
+.event-city-card.bengaluru .book-tickets-button-cities {
+  margin-left: 45px;
+ }
+.event-city-card.noida {
+  top: 740px;
+  right: 64px;
+  width: 250px;
+}
+
+.event-city-card.noida .event-city-name {  }
+.event-city-card.noida .event-city-date {}
+.event-city-card.noida .event-city-venue { }
+.event-city-card.noida .city-icon {}
+.event-city-card.noida .book-tickets-button-cities { }
+
+.event-city-card.hyderabad {
+  top: 960px;
+  right: 72px;
+  width: 270px;
+}
+
+.event-city-card.hyderabad .event-city-name {  }
+.event-city-card.hyderabad .event-city-date {  }
+.event-city-card.hyderabad .event-city-venue {  }
+.event-city-card.hyderabad .city-icon {}
+.event-city-card.hyderabad .book-tickets-button-cities {}
+
+
+.event-city-card.Jaipur {
+  top: 1180px;
+  right: 68px;
+  width: 260px;
+}
+
+.event-city-card.jaipur .event-city-name { }
+.event-city-card.jaipur .event-city-date {  }
+.event-city-card.jaipur .event-city-venue { }
+.event-city-card.jaipur .city-icon { }
+.event-city-card.jaipur .book-tickets-button-cities {  }
+

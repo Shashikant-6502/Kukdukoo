@@ -1,0 +1,65 @@
+.video-highlight-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  background: #fff;
+}
+
+/* Cartoon-style frame */
+.video-frame {
+  background: #676767;
+  border: 13px solid #C5F0FF;
+  border-radius: 11px;
+  padding: 15px;
+  width: 700px;
+  box-shadow: 3px 3px 0 #C5F0FF; /* cartoon-style shadow */
+  position: relative;
+}
+.video-content{
+  padding: 20px;             /* space inside */
+  margin: 0px;         /* space outside */
+  width: fit-content;        /* shrink to content width */
+}
+
+/* Video box */
+.video-box {
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+}
+
+.video-placeholder {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Buttons row */
+.video-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Button base */
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #000;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Watch Highlights Button */
+.highlight-btn {
+  background: #44c4ff;
+  color: #000;
+}
+

@@ -8,6 +8,7 @@ import TicketsPage from './pages/TicketsPage';
 import Header from './components/common/Header/Header';
 import Footer from './components/common/Footer/Footer';
 import CityPage from './pages/CityPage.jsx'
+import AllCities from './pages/AllCItyPage.jsx';
 import './style.css'; 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/tickets" element={<TicketsPage />} />
               <Route path='/CityPage' element={<CityPage/>} />
+              <Route path='/AllCityPage' element={<AllCities/>} />
             </Routes>
           </div>
         </main>

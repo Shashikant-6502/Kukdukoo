@@ -59,6 +59,8 @@ export default function StoreSection() {
     setDesktopCurrentSlide(prev => prev === 0 ? currentCards.length - 1 : prev - 1);
   };
 
+  // const handleNavigation = (path) => {
+  //   Navigator('/tickets')};
   const handleNextSlide = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideNext();
