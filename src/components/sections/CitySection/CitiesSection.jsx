@@ -18,7 +18,8 @@ import noida from '../../../assets/images/noida-icon.png';
 import citiesPaperPlane from '../../../assets/images/cities-paper-plane-icon.png';
 import ArrowButton from "../../../assets/buttons/greenButton/greenButton";
 import WaveDividerLayout from '../../layout/WaveDividerLayout';
-function CitiesSection({ exploreLabel = "Explore Cities" }) {
+
+function CitiesSection() {
   const cityIcon = {
     'bengluru-icon.png': bengluru,
     'hyderabad-icon.png': hyderabad,
@@ -29,32 +30,32 @@ function CitiesSection({ exploreLabel = "Explore Cities" }) {
 
   const navigate = useNavigate();
   const handleExploreCities = () => {
-      navigate('/AllCityPage');
+    navigate('/AllCityPage');
   };
 
   return (
     <div className="city-section">
-      <img src={citiesPaperPlane} alt="Paper Arrow" className="paper-arrow" />
+      <img src={citiesPaperPlane} alt="Paper Arrow" className="paper-arrow-plane" />
       <WaveDividerLayout position="top" hideWave={false} hideBoat={false} />
       <div className="section-content">
         <h2>
           <img src={leftLocationIcon} alt="Location" className="location-icon" />
-          {exploreLabel}
+          Cities We Are Going To
           <img src={rightLocationIcon} alt="Location" className="location-icon" />
         </h2>
 
-        {/* ✅ Desktop/Tablet Static Grid (Web) */}
+        {/* ✅ Desktop/Tablet Grid */}
         <div className="cities-grid">
           {citiesData.cities.map((city, index) => (
             <div className="city-card" key={index}>
               <img src={cityIcon[city.icon]} alt={city.name} className="city-icon" />
               <div className="city-name">{city.name}</div>
-              <div className="city-date">{city.date}</div>
+              <div className="city-date">{city.date.replace("25", "25’")}</div>
             </div>
           ))}
         </div>
 
-        {/* ✅ Mobile Swiper (hidden on web) */}
+        {/* ✅ Mobile Swiper */}
         <div className="cities-swiper">
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -69,13 +70,18 @@ function CitiesSection({ exploreLabel = "Explore Cities" }) {
                 <div className="city-card">
                   <img src={cityIcon[city.icon]} alt={city.name} className="city-icon" />
                   <div className="city-name">{city.name}</div>
-                  <div className="city-date">{city.date}</div>
+                  <div className="city-date">{city.date.replace("25", "25’")}</div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-        <ArrowButton label={"Explore All Cities"} onClick={handleExploreCities} />
+
+        <ArrowButton
+          label={"Explore Cities"}
+          onClick={handleExploreCities}
+          className="explore-btn"
+        />
       </div>
       <WaveDividerLayout position="bottom" hideWave={false} hideBoat={true} />
     </div>

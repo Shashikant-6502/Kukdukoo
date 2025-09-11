@@ -56,13 +56,15 @@
 }
 
 /* City icon */
-.city-icon {
+.city-section .city-icon {
   width: 120px; 
   height: 120px;
   object-fit: contain;
   margin-bottom: 15px;
   display: block;
   background: transparent;
+  /* Ensure consistent visual sizing despite different transparent paddings in PNGs */
+  image-rendering: auto;
 }
 
 /* City name ribbon */
@@ -190,7 +192,7 @@
     display: none !important;
   }
 
-  .city-icon {
+  .city-section .city-icon {
     width: 90px;
     height: 90px;
   }

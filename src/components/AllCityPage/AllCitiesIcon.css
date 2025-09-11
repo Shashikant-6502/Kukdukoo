@@ -23,14 +23,44 @@ width: 100%;
   height: 100%;
   display: block;
  }
-.city-icon {
-  width: 220px;
-  height:170px;
-  top: 1419px;
-  left: 932px; 
-  opacity: 1;
-  margin-bottom: 0;
-} */
+.all-cities-icon-section .city-icon {
+  width: 240px;
+  height: auto;
+  margin-bottom: -20px;
+}
+.book-tickets-button-cities { 
+  width: 225px;
+  margin-top:-25px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+   padding: 0 12px;
+  height: 45px;
+  background-color: #ec5e5e;   
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  align-self: center; 
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
+  box-sizing: border-box;
+ }
+.book-tickets-button-cities:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
 
 .event-city-card {
   position: absolute;
@@ -100,45 +130,6 @@ width: 100%;
   height: 100px;
   margin-left: 20px;
 }
-
-.city-icon {
-  width: 240px;
-  height: auto;
-  margin-bottom: -20px;
-}
-.book-tickets-button-cities { 
-  width: 225px;
-  margin-top:-25px;
-  border-radius: 10px;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
-   padding: 0 12px;
-  height: 45px;
-  background-color: #ec5e5e;   
-  border: 2px solid black;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0;
-  align-self: center; 
-  white-space: nowrap;
-  overflow: visible;
-  text-overflow: unset;
-  box-sizing: border-box;
- }
-.book-tickets-button-cities:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-}
-
 
 .event-city-card.mumbai   { top: 350px;  right: 200px;width: 280px;
 padding-top: 100px;
