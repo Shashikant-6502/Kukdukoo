@@ -2,27 +2,27 @@
   "cities": [
     {
       "name": "PUNE",
-      "date": "8 Nov 25",
+      "date": "8th Nov 25'",
       "icon": "pune-icon.png"
     },
     {
       "name": "MUMBAI",
-      "date": "10 Nov 25",
+      "date": "10th Nov 25'",
       "icon": "mumbai-icon.png"
     },
     {
       "name": "NOIDA",
-      "date": "10 Nov 25",
+      "date": "10th Nov 25'",
       "icon": "noida-icon.png"
     },
     {
       "name": "HYDERABAD",
-      "date": "10 Nov 25",
+      "date": "10th Nov 25'",
       "icon": "hyderabad-icon.png"
     },
     {
       "name": "BENGALURU",
-      "date": "10 Nov 25",
+      "date": "10th Nov 25'",
       "icon": "bengluru-icon.png"
     }
   ]

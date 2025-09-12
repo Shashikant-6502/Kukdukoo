@@ -35,8 +35,8 @@
 ------------------------------ */
 .cities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* narrower min width */
+  gap: 0.8rem;  /* reduced gap between cities */
   justify-items: center;
   width: 100%;
   max-width: 1200px;
@@ -52,7 +52,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 160px;
+  max-width: 150px; /* slightly smaller for tighter fit */
 }
 
 /* City icon */
@@ -60,49 +60,56 @@
   width: 120px; 
   height: 120px;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* smaller gap */
   display: block;
   background: transparent;
-  /* Ensure consistent visual sizing despite different transparent paddings in PNGs */
   image-rendering: auto;
 }
 
 /* City name ribbon */
+/* City name ribbon */
 .city-name {
   background: #e74c3c; 
   color: #fff;
-  font-weight: bold;
+  font-weight: semibold;
   font-size: 1.1rem;
-  padding: 6px 14px;
-  border-radius: 10px;
+  padding: 8px 20px;        /* ✅ wider */
+  border-radius: 12px;
   border: 2px solid #000;
   box-shadow: 3px 3px 0 #000;
-  margin-top: -20px;
+  margin-top: 0;
   z-index: 1;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
   text-align: center;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  display: inline-block;
+  min-width: 150px;          /* ✅ ensures consistent width */
 }
 
-/* City date label */
+/* City date label (above the city name) */
 .city-date {
   background: #87ceeb;
   color: #000;
   font-weight: bold;
-  font-size: 0.95rem;
-  padding: 4px 10px;
-  border-radius: 8px;
-  border: 2px solid #000;
+  font-size: 0.95rem;        /* ✅ slightly bigger */
+  padding: 5px 14px;         /* ✅ more breathing space */
+  border-radius: 10px;
+  border: none;
   box-shadow: 2px 2px 0 #000;
-  margin-top: 6px;
+  margin-bottom: -6px;       /* keeps it close to city name */
   position: relative;
+  top: -10px;                /* ✅ lifted above */
   z-index: 2;
-  font-family: 'Super Comic', 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Creato isplay', cursive;
   text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-transform: none;
+  height: 30px;
 }
+
 
 /* ------------------------------
    Explore Button
@@ -127,17 +134,6 @@
   transform: scale(1.05);
 }
 
-/* ------------------------------
-   Paper Plane
------------------------------- */
-.paper-arrow-plane {
-  position: absolute;
-  top: 200px;  
-  right: 10px; 
-  width: 200px;
-  height: auto;
-  pointer-events: none;
-}
 /* Section Content */
 .section-content {
   position: relative;
@@ -161,19 +157,19 @@
   /* Show Swiper */
   .cities-swiper {
     display: block;
-    padding: 10px 0 30px;
+    padding: 10px 0 20px;
   }
 
   .cities-swiper .swiper-slide {
     display: flex;
     justify-content: center;
-    width: 140px !important;
+    width: 120px !important; /* tighter */
   }
 
   .cities-swiper .swiper-pagination {
     bottom: 0;
     position: relative;
-    margin-top: 10px;
+    margin-top: 6px;
   }
 
   .cities-swiper .swiper-pagination-bullet {
@@ -195,22 +191,20 @@
   .city-section .city-icon {
     width: 90px;
     height: 90px;
+    margin-bottom: 8px;
   }
 
   .city-name {
-    font-size: 0.9rem;
-    padding: 4px 10px;
+    font-size: 0.85rem;
+    padding: 4px 8px;
+    margin-top: -10px;
+    white-space: normal; /* allow wrapping if needed */
   }
 
   .city-date {
-    font-size: 0.8rem;
-    padding: 3px 8px;
-  }
-
-  .paper-arrow-plane {
-    width: 120px;
-    bottom: -20px;
-    right: 5px;
+    font-size: 0.75rem;
+    padding: 3px 6px;
+    white-space: nowrap;
   }
 
   .city-section h2 {

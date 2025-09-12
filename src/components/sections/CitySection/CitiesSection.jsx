@@ -15,7 +15,6 @@ import hyderabad from '../../../assets/images/Hyderabad-icon.png';
 import mumbai from '../../../assets/images/mumbai-icon.png';
 import pune from '../../../assets/images/pune-icon.png';
 import noida from '../../../assets/images/noida-icon.png';
-import citiesPaperPlane from '../../../assets/images/cities-paper-plane-icon.png';
 import ArrowButton from "../../../assets/buttons/greenButton/greenButton";
 import WaveDividerLayout from '../../layout/WaveDividerLayout';
 
@@ -35,7 +34,6 @@ function CitiesSection() {
 
   return (
     <div className="city-section">
-      <img src={citiesPaperPlane} alt="Paper Arrow" className="paper-arrow-plane" />
       <WaveDividerLayout position="top" hideWave={false} hideBoat={false} />
       <div className="section-content">
         <h2>
@@ -50,7 +48,7 @@ function CitiesSection() {
             <div className="city-card" key={index}>
               <img src={cityIcon[city.icon]} alt={city.name} className="city-icon" />
               <div className="city-name">{city.name}</div>
-              <div className="city-date">{city.date.replace("25", "25’")}</div>
+              <div className="city-date">{city.date}</div>
             </div>
           ))}
         </div>

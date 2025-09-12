@@ -29,7 +29,8 @@
 .wave-divider.bottom::before {
   content: "";
   position: absolute;
-  top: 0px;
+  top: 50%;                      /* center vertically */
+  transform: translateY(-50%);   /* adjust to stay centered */
   width: 150px;
   height: 150px;
   background: url("../../assets/images/boat-icon.png") no-repeat center;
@@ -53,4 +54,24 @@
 
 .wave-divider.hide-svg::before {
   content: none !important;
+}
+
+/* ---------- Responsive Boat Size ---------- */
+
+/* Tablets and smaller */
+@media (max-width: 768px) {
+  .wave-divider.top::before,
+  .wave-divider.bottom::before {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .wave-divider.top::before,
+  .wave-divider.bottom::before {
+    width: 70px;
+    height: 70px;
+  }
 }
