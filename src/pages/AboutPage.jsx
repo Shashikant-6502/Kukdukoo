@@ -2,7 +2,11 @@ import React from 'react';
 import AboutSection from '../components/sections/AboutSection/AboutSection';
 import AchievementsSection from '../components/sections/AchievementSection/AchievementsSection';
 import TestimonialsSection from '../components/sections/TestimonialSection/TestimonialsSection';
-
+import ContactForm from '../components/newComponents/ContactForm';
+import inkIcon from '../assets/images/ink-icon.png';
+import Partners from '../components/newComponents/ourPartners';
+import AdvancePartners from '../components/newComponents/AdvanceOurPartner.jsx'
+import FestivalSchedule from '../components/cityPageSections/FestivalSchedule/FestivalSchedule.jsx'
 function AboutPage() {
   return (
     <>
@@ -12,6 +16,10 @@ function AboutPage() {
         minHeight: 'calc(100vh - 200px - 300px)',
         margin: '20px'
       }}>
+        <ContactForm/>
+        <Partners/>
+        <FestivalSchedule/>
+        <AdvancePartners/>
         <h1 style={{ 
           fontSize: '3em', 
           fontWeight: '800', 
