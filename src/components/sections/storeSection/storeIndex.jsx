@@ -21,6 +21,7 @@ import paperArrowStore from "../../../assets/images/store-paper-plane-icon.png";
 import BookTicketsButton from "../../../assets/buttons/BookTicketsButton/BookTicketsButton";
 import leftArrowIcon from '../../../assets/images/left-arrow-icon.png';
 import rightArrowIcon from '../../../assets/images/right-arrow-icon.png';
+import kukdukoo2 from "../../../assets/images/kukdukoo-2.png";
 
 export default function StoreSection() {
   const [activeTab, setActiveTab] = useState("on-stage");
@@ -55,17 +56,13 @@ export default function StoreSection() {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slidePrev();
     }
-    // For desktop grid
     setDesktopCurrentSlide(prev => prev === 0 ? currentCards.length - 1 : prev - 1);
   };
 
-  // const handleNavigation = (path) => {
-  //   Navigator('/tickets')};
   const handleNextSlide = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideNext();
     }
-    // For desktop grid
     setDesktopCurrentSlide(prev => (prev + 1) % currentCards.length);
   };
 
@@ -73,9 +70,8 @@ export default function StoreSection() {
     setCurrentSlide(swiper.realIndex);
   };
 
-  // Get visible cards for desktop (6 cards at a time)
   const getVisibleCards = () => {
-    const cards = [...currentCards, ...currentCards]; // Duplicate for smooth loop
+    const cards = [...currentCards, ...currentCards];
     const startIndex = desktopCurrentSlide;
     return cards.slice(startIndex, startIndex + 6);
   };
@@ -84,14 +80,14 @@ export default function StoreSection() {
     <div className="store-header">
       <img src={paperArrowStore} alt="Paper Arrow" className="paper-arrow-store" />
 
-      {/* Heading */}
       <h1 className="store-title">
         WHAT'S IN STORE <span className="question-mark">?</span>
       </h1>
 
-      {/* Stair Image with Tabs */}
+      {/* Stair Image with Kukdukoo above */}
       <div className="stair-wrapper">
         <img src={stairImage} alt="stair background" className="stair-image" />
+        <img src={kukdukoo2} alt="Kukdukoo" className="kukdukoo2" />
 
         <div className="activities-tabs">
           <button
@@ -115,9 +111,8 @@ export default function StoreSection() {
         </div>
       </div>
 
-      {/* ✅ Desktop Grid with Arrow Navigation */}
+      {/* Desktop Grid */}
       <div className="cards-container">
-        {/* Left Arrow */}
         <button className="carousel-arrow carousel-arrow-left" onClick={handlePrevSlide}>
           <img src={leftArrowIcon} alt="Previous" />
         </button>
@@ -134,16 +129,13 @@ export default function StoreSection() {
           ))}
         </div>
 
-        {/* Right Arrow */}
         <button className="carousel-arrow carousel-arrow-right" onClick={handleNextSlide}>
           <img src={rightArrowIcon} alt="Next" />
         </button>
       </div>
 
-      {/* ✅ Mobile Swiper with Arrow Navigation */}
-      <>
+      {/* Mobile Swiper */}
       <div className="store-swiper">
-        {/* Mobile Left Arrow */}
         <button className="mobile-carousel-arrow mobile-carousel-arrow-left" onClick={handlePrevSlide}>
           <img src={leftArrowIcon} alt="Previous" />
         </button>
@@ -171,16 +163,12 @@ export default function StoreSection() {
           ))}
         </Swiper>
 
-        {/* Mobile Right Arrow */}
         <button className="mobile-carousel-arrow mobile-carousel-arrow-right" onClick={handleNextSlide}>
           <img src={rightArrowIcon} alt="Next" />
         </button>
       </div>
-      </>
-
-      {/* ✅ Centered Book Tickets */}
       <div className="tickets-btn-container">
-        <BookTicketsButton onClick={handleNavigation} />
+        <BookTicketsButton onClick={handleNavigation} arrow={true} />
       </div>
     </div>
   );

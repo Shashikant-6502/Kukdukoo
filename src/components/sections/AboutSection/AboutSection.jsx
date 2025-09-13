@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import ArrowButton from "../../../assets/buttons/greenButton/greenButton"
 import "./AboutSection.css";
+import citiesPaperPlane from "../../../assets/images/cities-paper-plane-icon.png";
+import kukdukoo1 from "../../../assets/images/kukdukoo1.png";
 
 function AboutSection() {
   const navigate = useNavigate();
@@ -12,8 +14,10 @@ function AboutSection() {
 
   return (
     <section className="about-section">
+      <img src={citiesPaperPlane} alt="Paper Arrow" className="paper-arrow-plane" />
       <h2 className="about-section-heading">
         <span className="curved-text">WHAT IS KUKDUKOO?</span>
+        <img src={kukdukoo1} alt="Kukdukoo" className="kukdukoo1" />
       </h2>
       <div className="about-kukdukoo">
         <p>

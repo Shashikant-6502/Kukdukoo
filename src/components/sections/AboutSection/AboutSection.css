@@ -1,22 +1,35 @@
 /* Section wrapper */
 .about-section {
+  position: relative;
   padding: 1rem;
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
   /* margin-top: -70px; */
+  font-family: var(--font-super-comic) !important;
 }
 
-/* Override global font for text only, not button */
-.about-section * {
-  font-family: var(--font-creato-display) !important;
+.kukdukoo1 {
+  display: inline-block;
+  vertical-align: middle; /* aligns with heading baseline */
+  width: 80px;            /* adjust size as needed */
+  height: auto;
+  margin-left: 10px;     /* spacing between image and text */
+  position: relative;
+  bottom: 25px;   
+  height: 85px;           /* fine-tune vertical alignment */
 }
 
-/* ✅ Heading uses super comic */
+/* Heading container now supports inline layout */
 .about-section-heading {
   font-family: var(--font-super-comic) !important;
   font-size: 2.2rem;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
+  display: inline-flex;       /* ✅ inline flex to align with image */
+  align-items: center;        /* vertical centering */
+  justify-content: center;
+  gap: 8px;                   /* space between img and text */
 }
 
 /* Body text */
@@ -46,22 +59,61 @@
   font-family: var(--font-super-comic) !important;
 }
 
+/* ------------------------------
+   Paper Plane - Bottom Right
+------------------------------ */
+.paper-arrow-plane {
+  position: absolute;
+  bottom: 20px;
+  right: -300px;
+  width: 120px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .about-section-heading {
     font-size: 1.8rem;
+    letter-spacing: 0.8px; /* keep slight spacing */
   }
   .about-kukdukoo {
     font-size: 16px;
+  }
+  
+  .paper-arrow-plane {
+    width: 100px;
+    bottom: 15px;
+    right: 3px;
+  }
+
+  /* ✅ Mobile tweak: lift section & set z-index */
+  .about-section {
+    margin-top: -30px; /* slightly up */
+    z-index: 5;        /* appear above overlaps */
   }
 }
 
 @media (max-width: 480px) {
   .about-section-heading {
     font-size: 1.6rem;
+    letter-spacing: 0.6px; /* keep spacing proportional */
   }
   .about-kukdukoo {
     font-size: 15px;
     line-height: 1.5;
+  }
+  
+  .paper-arrow-plane {
+    width: 80px;
+    bottom: 10px;
+    right: 2px;
+  }
+
+  /* ✅ Extra tweak for very small screens */
+  .about-section {
+    margin-top: -40px; /* a bit higher */
+    z-index: 5;
   }
 }
