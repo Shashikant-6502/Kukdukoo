@@ -5,14 +5,19 @@
 }
 
 .festival-title {
+   display: flex;
+  align-items: center;       /* vertically center icons and text */
+  justify-content: center;   /* center the whole row horizontally */
+  gap: 10px;                 /* space between icons and text */
+  flex-wrap: nowrap;  
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 30px;
 }
-.festival-title img{
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
+.festival-title img {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
 }
 
 .schedule-container {
@@ -20,12 +25,24 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+  position: relative;
 }
 
 .frames {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+}
+
+/* 2 cards side by side for desktop */
+.two-frames {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 1 card with arrows close for mobile */
+.single-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .schedule-image {
@@ -39,6 +56,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  transform: translateY(-50%);
 }
 
 .arrow-btn img {
@@ -51,3 +69,22 @@
   cursor: not-allowed;
 }
 
+.schedule {
+  margin-top: 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .schedule-container {
+    gap: 10px; /* arrows come closer */
+  }
+
+  .schedule-image {
+    width: 280px; /* smaller card */
+  }
+
+  .arrow-btn img {
+    width: 30px;
+    height: 30px;
+  }
+}

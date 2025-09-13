@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import manchFrame from "../../../assets/images/manch-frame.png";
 import akkadFrame from "../../../assets/images/akkad-frame.png";
 import "./FestivalSchedule.css";
@@ -8,10 +8,27 @@ import clockIcon from "../../../assets/images/clock-icon.png";
 import calenderIcon from "../../../assets/images/calender-icon.png";
 
 export default function FestivalSchedule() {
-  const frames = [manchFrame, akkadFrame, manchFrame, akkadFrame]; 
+  const frames = [manchFrame, akkadFrame, manchFrame, akkadFrame];
   const [startIndex, setStartIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(2); // default desktop
 
-  const visibleFrames = frames.slice(startIndex, startIndex + 2);
+  // Update visibleCount based on screen size
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      if (window.innerWidth <= 768) {
+        setVisibleCount(1); // mobile
+      } else {
+        setVisibleCount(2); // desktop
+      }
+    };
+
+    updateVisibleCount(); // run at mount
+    window.addEventListener("resize", updateVisibleCount);
+
+    return () => window.removeEventListener("resize", updateVisibleCount);
+  }, []);
+
+  const visibleFrames = frames.slice(startIndex, startIndex + visibleCount);
 
   const handlePrev = () => {
     if (startIndex > 0) {
@@ -20,7 +37,7 @@ export default function FestivalSchedule() {
   };
 
   const handleNext = () => {
-    if (startIndex < frames.length - 2) {
+    if (startIndex < frames.length - visibleCount) {
       setStartIndex(startIndex + 1);
     }
   };
@@ -28,9 +45,9 @@ export default function FestivalSchedule() {
   return (
     <section className="festival-schedule-section">
       {/* Title */}
-      <h2 className="festival-title ">
+      <h2 className="festival-title">
         <img src={calenderIcon} alt="calender-icon" />
-         FESTIVAL SCHEDULE 
+        FESTIVAL SCHEDULE
         <img src={clockIcon} alt="clock-icon" />
       </h2>
 
@@ -45,7 +62,11 @@ export default function FestivalSchedule() {
         </button>
 
         {/* Visible Frames */}
-        <div className="frames">
+        <div
+          className={`frames ${
+            visibleCount === 1 ? "single-frame" : "two-frames"
+          }`}
+        >
           {visibleFrames.map((frame, index) => (
             <img
               key={index}
@@ -59,18 +80,20 @@ export default function FestivalSchedule() {
         {/* Right Arrow */}
         <button
           onClick={handleNext}
-          disabled={startIndex >= frames.length - 2}
-          className={`arrow-btn ${startIndex >= frames.length - 2 ? "disabled" : ""}`}
+          disabled={startIndex >= frames.length - visibleCount}
+          className={`arrow-btn ${
+            startIndex >= frames.length - visibleCount ? "disabled" : ""
+          }`}
         >
           <img src={rightArrowIcon} alt="Next" />
         </button>
       </div>
 
       {/* Book Tickets Button */}
-       <div className="logo-and-tickets-container">
-        <button 
-          className="book-tickets-button"
-          onClick={() => handleNavigation('/tickets')}
+      <div className="logo-and-tickets-container">
+        <button
+          className="book-tickets-button schedule"
+          onClick={() => handleNavigation("/tickets")}
         >
           BOOK TICKETS
         </button>
