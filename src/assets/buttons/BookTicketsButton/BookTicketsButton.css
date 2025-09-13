@@ -156,6 +156,78 @@
   transform: scale(1.03); /* ✅ small scale on hover when shrunk */
 }
 
+/* Arrow styling for BookTicketsButton */
+.book-tickets-button.with-arrow {
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.button-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.book-tickets-button.with-arrow:hover .button-arrow {
+  transform: translateX(2px);
+}
+
+/* Responsive arrow sizing */
+@media (max-width: 1024px) {
+  .book-tickets-button.with-arrow {
+    gap: 6px;
+    padding: 0 14px;
+  }
+  .button-arrow {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-tickets-button.with-arrow {
+    gap: 5px;
+    padding: 0 12px;
+  }
+  .button-arrow {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-tickets-button.with-arrow {
+    gap: 4px;
+    padding: 0 10px;
+  }
+  .button-arrow {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 412px) {
+  .book-tickets-button.with-arrow {
+    gap: 3px;
+    padding: 0 8px;
+  }
+  .button-arrow {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .book-tickets-button.with-arrow {
+    gap: 2px;
+    padding: 0 6px;
+  }
+  .button-arrow {
+    width: 8px;
+    height: 8px;
+  }
+}
+
 /* ✅ active = green */
 .header-button.active {
   background-color: #CFF468;

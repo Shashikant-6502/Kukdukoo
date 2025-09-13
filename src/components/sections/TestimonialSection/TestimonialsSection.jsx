@@ -4,25 +4,59 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
 import leftLoveIcon from '../../../assets/images/left-love-icon.png';
 import rightLoveIcon from '../../../assets/images/right-love-icon.png';
 import leftArrowIcon from '../../../assets/images/left-arrow-icon.png';
 import rightArrowIcon from '../../../assets/images/right-arrow-icon.png';
-import quoteIcon from '../../../assets/images/inverted-comma-icon.png';
 import authorImg from '../../../assets/images/author.jpg';
 import dramaImg from '../../../assets/images/drama.jpg';
 import danceImg from '../../../assets/images/dance.jpg';
 import WaveDividerLayout from '../../layout/WaveDividerLayout';
+import TestimonialCard from '../../common/TestimonialCard/TestimonialCard';
 
 const cardsData = [
-  { id: 1, text: "card-1 testimonial text goes here...", image: authorImg },
-  { id: 2, text: "card-2 testimonial text goes here...", image: dramaImg },
-  { id: 3, text: "card-3 testimonial example...", image: danceImg },
-  { id: 4, text: "card-4 lorem ipsum...", image: authorImg },
-  { id: 5, text: "card-5 lorem ipsum...", image: dramaImg },
-  { id: 6, text: "card-6 lorem ipsum...", image: danceImg },
-  { id: 7, text: "card-7 written by tanujain...", image: authorImg }
+  { 
+    id: 1, 
+    brandName: "BRAND NAME", 
+    text: "Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.", 
+    image: authorImg 
+  },
+  { 
+    id: 2, 
+    brandName: "FAMILY FUN", 
+    text: "This festival brought our family together for an amazing experience filled with joy, laughter, and unforgettable memories.", 
+    image: dramaImg 
+  },
+  { 
+    id: 3, 
+    brandName: "KIDS LOVE IT", 
+    text: "My children had the time of their lives! The activities were engaging and perfectly suited for their age group.", 
+    image: danceImg 
+  },
+  { 
+    id: 4, 
+    brandName: "AMAZING EVENT", 
+    text: "The organization was flawless and the entertainment was top-notch. We can't wait for next year!", 
+    image: authorImg 
+  },
+  { 
+    id: 5, 
+    brandName: "HIGHLY RECOMMEND", 
+    text: "A perfect blend of fun and learning. The kids were entertained while we parents could relax and enjoy.", 
+    image: dramaImg 
+  },
+  { 
+    id: 6, 
+    brandName: "WORTH EVERY PENNY", 
+    text: "Great value for money with so many activities and shows. The whole family had an incredible time.", 
+    image: danceImg 
+  },
+  { 
+    id: 7, 
+    brandName: "BEST FESTIVAL", 
+    text: "This is hands down the best family festival we've ever attended. The atmosphere was magical!", 
+    image: authorImg 
+  }
 ];
 
 function TestimonialsSection() {
@@ -46,7 +80,6 @@ function TestimonialsSection() {
       prevIndex === cardsData.length - 1 ? 0 : prevIndex + 1
     );
   };
-
   return (
     <section className="testimonial-section">
       <WaveDividerLayout position="top" boatPosition="right-boat" />
@@ -58,7 +91,6 @@ function TestimonialsSection() {
         </h2>
       </div>
 
-      {/* ✅ Desktop View (3 cards + arrows) */}
       {!isMobile && (
         <div className="testimonial-content">
           <button className="arrow-btn left" onClick={handlePrev}>
@@ -68,21 +100,13 @@ function TestimonialsSection() {
             const idx = (currentIndex + i) % cardsData.length;
             const card = cardsData[idx];
             return (
-              <div className="testimonial-card" key={card.id}>
-                <div className="card-image">
-                  <img src={card.image} alt={`testimonial ${card.id}`} />
-                </div>
-                <div className="testimonial-card-content" style={{ transform: "scaleX(1.09)" }}>
-                  <div className="card-text">
-                    <div className="quote-icon-overlap">
-                      <img src={quoteIcon} alt="quote" className="quote-icon" />
-                    </div>
-                    <div className="testimonial-text-wrapper">
-                      <p>{card.text}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <TestimonialCard
+                key={card.id}
+                brandName={card.brandName}
+                testimonialText={card.text}
+                image={card.image}
+                showHeader={true}
+              />
             );
           })}
           <button className="arrow-btn right" onClick={handleNext}>
@@ -91,7 +115,6 @@ function TestimonialsSection() {
         </div>
       )}
 
-      {/* ✅ Mobile View (Swiper autoplay + dots) */}
       {isMobile && (
         <div className="testimonial-swiper">
           <Swiper
@@ -103,27 +126,17 @@ function TestimonialsSection() {
           >
             {cardsData.map((card) => (
               <SwiperSlide key={card.id}>
-                <div className="testimonial-card">
-                  <div className="card-image">
-                    <img src={card.image} alt={`testimonial ${card.id}`} />
-                  </div>
-                  <div className="testimonial-card-content">
-                    <div className="card-text">
-                      <div className="quote-icon-overlap">
-                        <img src={quoteIcon} alt="quote" className="quote-icon" />
-                      </div>
-                      <div className="testimonial-text-wrapper">
-                        <p>{card.text}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <TestimonialCard
+                  brandName={card.brandName}
+                  testimonialText={card.text}
+                  image={card.image}
+                  showHeader={false}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       )}
-
       <WaveDividerLayout position="bottom" hideBoat="true" />
     </section>
   );

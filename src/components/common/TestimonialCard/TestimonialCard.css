@@ -1,0 +1,156 @@
+/* TestimonialCard Component Styles */
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  background: transparent;
+  position: relative;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header Section - Yellow */
+.card-header {
+  background: #FFFF00;
+  border: 3px solid #000;
+  border-radius: 15px 15px 0 0;
+  padding: 12px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brand-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Content Section - Gray */
+.card-content {
+  background: #D3D3D3;
+  border-left: 3px solid #000;
+  border-right: 3px solid #000;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.content-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ If no header, gray box should have top border + rounded corners */
+.testimonial-card.no-header .card-content {
+  border-top: 3px solid #000;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Quote Section - Green */
+.card-quote {
+  background: #90EE90;
+  border: 3px solid #000;
+  border-radius: 0 0 15px 15px;
+  padding: 20px 18px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quote-marks {
+  position: absolute;
+  top: -25px;
+  left: 10px;
+  font-size: 48px;
+  color: #FF0000;
+  font-weight: bold;
+  line-height: 1;
+  z-index: 4;
+  text-shadow: 2px 2px 0 #000;
+  font-family: 'Arial', sans-serif;
+}
+
+.quote-text {
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+  font-family: 'Arial', sans-serif;
+  padding-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .card-header {
+    padding: 10px 15px;
+  }
+  
+  .brand-name {
+    font-size: 14px;
+  }
+  
+  .card-content {
+    min-height: 150px;
+  }
+  
+  .card-quote {
+    padding: 15px 12px;
+  }
+  
+  .quote-text {
+    font-size: 13px;
+  }
+  
+  .quote-marks {
+    font-size: 36px;
+    top: -20px;
+    left: 8px;
+  }
+}
+
+@media (max-width: 490px) {
+  .testimonial-card {
+    max-width: 280px;
+  }
+  
+  .card-header {
+    padding: 8px 12px;
+  }
+  
+  .brand-name {
+    font-size: 12px;
+  }
+  
+  .card-content {
+    min-height: 120px;
+  }
+  
+  .card-quote {
+    padding: 12px 10px;
+  }
+  
+  .quote-text {
+    font-size: 12px;
+  }
+  
+  .quote-marks {
+    font-size: 32px;
+    top: -18px;
+    left: 6px;
+  }
+}

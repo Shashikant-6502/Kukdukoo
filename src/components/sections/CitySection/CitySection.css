@@ -36,7 +36,7 @@
 .cities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* narrower min width */
-  gap: 0.8rem;  /* reduced gap between cities */
+  gap: 0.2rem;  
   justify-items: center;
   width: 100%;
   max-width: 1200px;
@@ -60,7 +60,7 @@
   width: 120px; 
   height: 120px;
   object-fit: contain;
-  margin-bottom: 10px; /* smaller gap */
+  margin-bottom: -25px;
   display: block;
   background: transparent;
   image-rendering: auto;
@@ -191,7 +191,7 @@
   .city-section .city-icon {
     width: 90px;
     height: 90px;
-    margin-bottom: 8px;
+    /* margin-bottom: 8px; */
   }
 
   .city-name {
