@@ -1,0 +1,166 @@
+.team-section {
+  background: #C5F0FF; 
+  padding: 60px 20px;
+  text-align: center;
+  height: 700px;
+  position: relative;
+}
+
+
+.team-heading {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 50px;
+}
+
+.team-icon {
+  font-size: 1.5rem;
+}
+
+.team-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.arrow-btn {
+  background: #ff4c4c;
+  border: none;
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-btn:hover {
+  background: #e63939;
+}
+
+.arrow-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.team-card {
+  border-radius: 12px;
+  max-width: 850px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.team-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.team-icon{
+    height: 40px;
+    width: 50px;
+}
+
+.team-card-info {
+  padding: 5px;
+  height: 130px;
+  text-align: center;
+  background: #CFF468;
+  border: 3px solid #000;
+  transform: scaleX(1.1);
+  transform-origin: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);   
+  border-radius: 15px 15px 15px 0px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.team-card-info .text-outline {
+  position: absolute;
+  top: 10px;  
+  left: 10px; 
+  width: 60px;
+  height: auto;
+  opacity: 0.2;  
+  z-index: 0;
+}
+.team-card-info .team-year,
+.team-card-info .text {
+  position: relative; 
+  z-index: 1;
+}
+.team-year {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #e53935;
+  text-align: center;
+}
+
+.text {
+  margin-left: 0;
+  text-align: left;
+}
+.text{
+    margin-left: 50px;
+    text-align: left;
+}
+
+.team-card-info .team-year {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FF3434;
+  margin-bottom: 12px;
+}
+
+.team-card-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .team-card {
+    max-width: 95%;
+  }
+
+  .team-card-info {
+    padding: 16px;
+  }
+
+  .team-card-info .team-year {
+    font-size: 1.5rem;
+  }
+
+  .team-card-info p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 490px) {
+  .team-slider {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .arrow-btn {
+    order: 2; 
+  }
+
+  .team-card {
+    order: 1;
+  }
+}
+
+

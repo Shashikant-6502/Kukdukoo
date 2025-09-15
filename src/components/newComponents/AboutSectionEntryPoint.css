@@ -1,0 +1,21 @@
+.about-page-hero-section {
+  position: relative;    
+  background-size: cover; 
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;   
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.about-overlay {
+  border-radius: 10px;
+  max-width: 900px;             /* keep text contained */
+}
+
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+}

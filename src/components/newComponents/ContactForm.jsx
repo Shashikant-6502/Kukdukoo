@@ -16,8 +16,10 @@ export default function ContactForm() {
           <label>Select Query type</label>
           <select className="dropdown">
             <option>SPONSORSHIP</option>
-            <option>GENERAL</option>
-            <option>PARTNERSHIP</option>
+            <option>EXHIBIT</option>
+            <option>HOST</option>
+            <option>KUKDUKOO FEST</option>
+            <option>PERFORMANCE</option>
           </select>
 
           <label>Name</label>

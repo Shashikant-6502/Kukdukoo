@@ -7,9 +7,10 @@ function ContactPage() {
   return (
          <section>
           <ContactForm/>
-          {/* <TestimonialsSection/> */}
+          <TestimonialsSection/>
           <AchievementsSection/>
           <CitiesSection/>
+          
          </section>
   );
 }

@@ -1,66 +1,143 @@
 .partners-section {
   text-align: center;
   padding: 40px 20px;
-  background: url("/images/background.png") no-repeat center center/cover;
+}
+.categories-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px auto;
+ 
 }
 
+/* Title */
 .partners-title {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
+/* Categories Container */
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* always 4 per row */
+  gap: 12px;
+  padding: 20px;
+  flex: 1;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Category Buttons */
 .category-btn {
   border: none;
   background: transparent;
   cursor: pointer;
   padding: 0;
   outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-btn img {
-  width: 120px;
-  height: 60px;
+  width: 100%;
+  height: 70px;
   object-fit: contain;
 }
 
-
-.categories-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 per row */
-  gap: 8px; /* space between items */
-  padding: 20px;
-  background: #fff;
-  border: 2px solid black;   /* 👈 border box */
-  border-radius: 20px;       /* rounded corners */
-  max-width: 700px;
-  width: 700px;
-  margin: 0 auto;            /* center horizontally */
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); /* optional nice shadow */
-}
+/* Partner Grid */
 .partners-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 boxes in each row */
-  gap: 12px; /* spacing between boxes */
-  max-width: 600px; /* optional: controls total width */
-  margin: 0 auto; /* center container */
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.partner-box {
-  background: #cceeff;       /* box background */
+/* Main partner box */
+.partner-box.large {
+  width: 100%;
+  max-width: 900px;  /* responsive max width */
+  height: 350px;     /* default height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  border-radius: 12px;
+  overflow: hidden;
   padding: 20px;
-  text-align: center;
+  border: 2px solid #000;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.arrow-btn-partner {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.arrow-btn-partner img {
+  width: 40px;
+  height: 40px;
+}
+
+.arrow-btn-partner.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+/* Each partner logo container */
+.partner-item {
+  width: 100%;
+  height: 100%;
+}
+
+/* Partner logo image */
+.partner-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* covers the whole box */
+  object-position: center;
+  display: block;
   border-radius: 8px;
-  border: 2px solid black;   /* ✅ border box */
-  color: #000;               /* ✅ text color (black) */
-  height: 120px;
-  margin-top: 20px;
+}
+
+/* -------------------------
+   RESPONSIVENESS
+------------------------- */
+@media (max-width: 1024px) {
+  .partner-box.large {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .categories-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    padding: 15px;
+  }
+
+  .partner-box.large {
+    height: 250px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .category-btn img {
+    height: 50px;
+  }
+
+  .partner-box.large {
+    height: 200px;
+    padding: 10px;
+  }
 }

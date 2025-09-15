@@ -143,3 +143,35 @@ function TestimonialsSection() {
 }
 
 export default TestimonialsSection;
+// import React from "react";
+// import "./TestimonialCard.css";
+// import quoteIcon from "../../../assets/images/quote-icon.png"; // replace with your actual quote icon
+
+// function TestimonialCard({ brandName, testimonialText, image, showHeader = true, headerIcon }) {
+//   return (
+//     <div className="testimonial-card">
+//       {/* ✅ Yellow Header (dynamic) */}
+//       {showHeader && (
+//         <div className="card-header">
+//           {headerIcon && <img src={headerIcon} alt="header icon" className="header-icon" />}
+//           <span>{brandName}</span>
+//         </div>
+//       )}
+
+//       {/* ✅ Image */}
+//       <div className="card-image">
+//         <img src={image} alt={brandName} />
+//       </div>
+
+//       {/* ✅ Text Section */}
+//       <div className="card-text">
+//         <div className="quote-icon-overlap">
+//           <img src={quoteIcon} alt="quote" className="quote-icon" />
+//         </div>
+//         <p>{testimonialText}</p>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default TestimonialCard;

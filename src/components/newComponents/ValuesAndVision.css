@@ -1,0 +1,44 @@
+.values-mission {
+  position: relative;
+  background: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* Container */
+.values-mission .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+.ink-icon-values img{
+height: 50px;
+width: 50px;
+}
+.vision-icon img{
+height: 50px;
+width: 50px;
+}
+/* Paragraphs */
+.section-block p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Strong text emphasis */
+.section-block p strong {
+  font-weight: bold;
+}
