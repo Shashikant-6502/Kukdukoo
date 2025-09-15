@@ -57,7 +57,7 @@ function CitiesSection() {
         <div className="cities-swiper">
           <Swiper
             modules={[Pagination, Autoplay]}
-            spaceBetween={15}
+            spaceBetween={20}
             slidesPerView="auto"
             loop={true}
             autoplay={{ delay: 2000, disableOnInteraction: false }}

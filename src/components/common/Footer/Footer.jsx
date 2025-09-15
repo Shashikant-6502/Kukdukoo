@@ -4,6 +4,7 @@ import './Footer.css';
 import footerBg from '../../../assets/images/footer-background.png';
 import kukdukooLogo from '../../../assets/images/kukdukoo-logo.png';
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import BookTicketsButton from "../../../assets/buttons/BookTicketsButton/BookTicketsButton"
 
 function Footer() {
   const navigate = useNavigate();
@@ -43,12 +44,7 @@ function Footer() {
             onClick={handleLogoClick}
             style={{ cursor: 'pointer' }}
           />
-          <button 
-            className="footer-button book-tickets-btn"
-            onClick={handleBookTickets}
-          >
-            BOOK TICKETS →
-          </button>
+      <BookTicketsButton onClick={handleBookTickets} arrow={true} />
         </div>
         
         {/* Right Column - Social Media and Contact Button */}

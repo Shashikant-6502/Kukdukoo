@@ -98,7 +98,8 @@
 @media (max-width: 480px) {
   .about-section-heading {
     font-size: 1.6rem;
-    letter-spacing: 0.6px; /* keep spacing proportional */
+    letter-spacing: 0.6px; 
+    white-space: nowrap;
   }
   .about-kukdukoo {
     font-size: 15px;
@@ -115,5 +116,11 @@
   .about-section {
     margin-top: -40px; /* a bit higher */
     z-index: 5;
+  }
+  .kukdukoo1 {
+    width: 55px;   /* ✅ even smaller image */
+    height: 60px;
+    bottom: 12px;  /* align better with smaller text */
+    margin-left: -10px;
   }
 }

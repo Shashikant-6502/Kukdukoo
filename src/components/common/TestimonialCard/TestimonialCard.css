@@ -10,14 +10,16 @@
 
 /* Header Section - Yellow */
 .card-header {
-  background: #FFFF00;
-  border: 3px solid #000;
-  border-radius: 15px 15px 0 0;
+  background: #FFF86E;
+  border: 1px solid #000;
+  border-radius: 20px;
   padding: 12px 20px;
   text-align: center;
   position: relative;
+  transform: scaleX(1.1);   /* 👈 makes header 10% wider */
+  transform-origin: center;
   z-index: 3;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 5px solid #000;
 }
 
 .brand-name {
@@ -34,7 +36,8 @@
   background: #D3D3D3;
   border-left: 3px solid #000;
   border-right: 3px solid #000;
-  min-height: 200px;
+  /* min-height: 200px; */
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,16 +60,31 @@
 
 /* Quote Section - Green */
 .card-quote {
-  background: #90EE90;
+  background: #CFF468;
   border: 3px solid #000;
-  border-radius: 0 0 15px 15px;
-  padding: 20px 18px;
+  padding: 20px 18px 20px;
   position: relative;
   z-index: 1;
+  transform: scaleX(1.1);  
+  transform-origin: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  border-radius: 15px 15px 15px 0px;
 }
-
-.quote-marks {
+.quote-legend {
+  position: absolute;
+  top: -30px; 
+  left: 0px;
+  padding: 0 6px;
+  z-index: 5;
+  line-height: 0;
+}
+.quote-icon {
+  width:40px;
+  height: 40px;
+  display: block;
+}
+/* .quote-marks {
   position: absolute;
   top: -25px;
   left: 10px;
@@ -77,7 +95,7 @@
   z-index: 4;
   text-shadow: 2px 2px 0 #000;
   font-family: 'Arial', sans-serif;
-}
+} */
 
 .quote-text {
   font-size: 14px;

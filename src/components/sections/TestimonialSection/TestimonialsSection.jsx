@@ -4,60 +4,30 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import leftLoveIcon from '../../../assets/images/left-love-icon.png';
-import rightLoveIcon from '../../../assets/images/right-love-icon.png';
-import leftArrowIcon from '../../../assets/images/left-arrow-icon.png';
-import rightArrowIcon from '../../../assets/images/right-arrow-icon.png';
-import authorImg from '../../../assets/images/author.jpg';
-import dramaImg from '../../../assets/images/drama.jpg';
-import danceImg from '../../../assets/images/dance.jpg';
-import WaveDividerLayout from '../../layout/WaveDividerLayout';
-import TestimonialCard from '../../common/TestimonialCard/TestimonialCard';
 
-const cardsData = [
-  { 
-    id: 1, 
-    brandName: "BRAND NAME", 
-    text: "Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.", 
-    image: authorImg 
-  },
-  { 
-    id: 2, 
-    brandName: "FAMILY FUN", 
-    text: "This festival brought our family together for an amazing experience filled with joy, laughter, and unforgettable memories.", 
-    image: dramaImg 
-  },
-  { 
-    id: 3, 
-    brandName: "KIDS LOVE IT", 
-    text: "My children had the time of their lives! The activities were engaging and perfectly suited for their age group.", 
-    image: danceImg 
-  },
-  { 
-    id: 4, 
-    brandName: "AMAZING EVENT", 
-    text: "The organization was flawless and the entertainment was top-notch. We can't wait for next year!", 
-    image: authorImg 
-  },
-  { 
-    id: 5, 
-    brandName: "HIGHLY RECOMMEND", 
-    text: "A perfect blend of fun and learning. The kids were entertained while we parents could relax and enjoy.", 
-    image: dramaImg 
-  },
-  { 
-    id: 6, 
-    brandName: "WORTH EVERY PENNY", 
-    text: "Great value for money with so many activities and shows. The whole family had an incredible time.", 
-    image: danceImg 
-  },
-  { 
-    id: 7, 
-    brandName: "BEST FESTIVAL", 
-    text: "This is hands down the best family festival we've ever attended. The atmosphere was magical!", 
-    image: authorImg 
-  }
-];
+import leftLoveIcon from "../../../assets/images/left-love-icon.png";
+import rightLoveIcon from "../../../assets/images/right-love-icon.png";
+import leftArrowIcon from "../../../assets/images/left-arrow-icon.png";
+import rightArrowIcon from "../../../assets/images/right-arrow-icon.png";
+import authorImg from "../../../assets/images/author.jpg";
+import dramaImg from "../../../assets/images/drama.jpg";
+import danceImg from "../../../assets/images/dance.jpg";
+
+import WaveDividerLayout from "../../layout/WaveDividerLayout";
+import TestimonialCard from "../../common/TestimonialCard/TestimonialCard";
+
+import cardsJson from "../../../data/cardsData.json";
+
+const imageMap = {
+  authorImg,
+  dramaImg,
+  danceImg,
+};
+
+const cardsData = cardsJson.cardsData.map((card) => ({
+  ...card,
+  image: imageMap[card.image],
+}));
 
 function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -80,6 +50,7 @@ function TestimonialsSection() {
       prevIndex === cardsData.length - 1 ? 0 : prevIndex + 1
     );
   };
+
   return (
     <section className="testimonial-section">
       <WaveDividerLayout position="top" boatPosition="right-boat" />
@@ -105,7 +76,7 @@ function TestimonialsSection() {
                 brandName={card.brandName}
                 testimonialText={card.text}
                 image={card.image}
-                showHeader={true}
+                showHeader={false}
               />
             );
           })}
@@ -137,6 +108,7 @@ function TestimonialsSection() {
           </Swiper>
         </div>
       )}
+
       <WaveDividerLayout position="bottom" hideBoat="true" />
     </section>
   );
