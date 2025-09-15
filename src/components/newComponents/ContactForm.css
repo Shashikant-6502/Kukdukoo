@@ -1,0 +1,202 @@
+.contact-container {
+  font-family: 'Arial', sans-serif;
+  padding: 40px 20px;
+  background: #fdfdfd;
+  text-align: center;
+  /* background-image: url("../../assets/images/Contact-us-background.png"); */
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Main Form Layout */
+.form-box {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: nowrap;
+   overflow-x: auto;
+}
+
+.form-left {
+  width: 55%;
+  text-align: left;
+  min-width: 350px;
+}
+
+.form-left label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-left input,
+.form-left select,
+.form-left textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Dropdown */
+.dropdown {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  background: #f96a6a;
+  color: white;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../../assets/images/arrow-dropdown-icon.png");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.dropdown option {
+  background: white;
+  color: black;
+  font-weight: normal;
+}
+
+/* Mobile Box */
+.mobile-box {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-box .prefix {
+  background: #eee;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 6px 0 0 6px;
+}
+
+.mobile-box input {
+  flex: 1;
+  border-radius: 0 6px 6px 0;
+  border-left: none;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.submit-btn {
+  background: #f96a6a;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #e45555;
+}
+
+/* Right Side Info */
+.form-right {
+  width: 40%;
+  display: flex;
+  min-width: 350px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 0px;
+  border: 1px solid #000;
+  border-bottom: 4px solid #000;
+}
+
+.icon {
+  width: 45px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.small-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: #fff;
+  border-bottom: 4px solid #000;
+}
+
+.large-box {
+  height: 175px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid #000;
+}
+
+/* ------------------ */
+/* 📱 Keep SAME Layout on All Screens */
+/* ------------------ */
+@media (max-width: 992px),
+       (max-width: 600px) {
+  .form-box {
+    flex-wrap: nowrap;     /* ✅ force side-by-side */
+  }
+
+  .form-left,
+  .form-right {
+    width: 100%;           /* let them shrink evenly */
+  }
+
+  .info-row {
+    flex-wrap: nowrap;     /* keep row */
+  }
+}
+@media (max-width: 600px) {
+  .form-box {
+    overflow-x: auto;      /* ✅ user can scroll */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  }
+}
