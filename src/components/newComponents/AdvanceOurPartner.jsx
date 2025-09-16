@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./AdvanceOurPartner.css";
 import ArrowButton from "../../assets/buttons/greenButton/greenButton";
 import educationIcon from "../../assets/images/education-button.png";
@@ -129,7 +129,22 @@ export default function OurPartnerAdvance() {
   const [active, setActive] = useState("education");
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 8;
+const [isMobile, setIsMobile] = useState(() =>
+  typeof window !== "undefined" ? window.innerWidth <= 768 : false
+);
 
+useEffect(() => {
+  const onResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+  window.addEventListener("resize", onResize);
+  return () => window.removeEventListener("resize", onResize);
+}, []);
+
+// Decide what to render
+const itemsToRender = isMobile
+  ? categories              // show all 16 in one line (mobile)
+  : categories.slice(startIndex, startIndex + visibleCount); 
   const handlePrev = () => {
     setStartIndex((prev) => Math.max(prev - visibleCount, 0));
   };
@@ -137,6 +152,7 @@ export default function OurPartnerAdvance() {
   const handleNext = () => {
     setStartIndex((prev) => Math.min(prev + visibleCount, categories.length - visibleCount));
   };
+  
 
   return (
     <section className="partners-section">
@@ -146,52 +162,55 @@ export default function OurPartnerAdvance() {
         <img src={rightArm} className="partner-icon" alt="right" />
       </h2>
 
+      {/* Categories Row */}
       <div className="categories-wrapper">
-  {/* Left Arrow */}
-  <button
-    onClick={handlePrev}
-    disabled={startIndex === 0}
-    className={`arrow-btn-partner ${startIndex === 0 ? "disabled" : ""}`}
-  >
-    <img src={leftArrowIcon} alt="Previous" />
-  </button>
+        {/* Left Arrow */}
+        <button
+          onClick={handlePrev}
+          disabled={startIndex === 0}
+          className={`arrow-btn-partner ${startIndex === 0 ? "disabled" : ""}`}
+        >
+          <img src={leftArrowIcon} alt="Previous" />
+        </button>
 
-  {/* Categories */}
-  <div className="categories-container">
-    {categories.slice(startIndex, startIndex + visibleCount).map((cat) => (
-      <div
-        key={cat.id}
-        className={`category-btn ${active === cat.id ? "active" : ""}`}
-        onClick={() => setActive(cat.id)}
-      >
-        <img
-          src={active === cat.id ? cat.activeImg : cat.defaultImg}
-          alt={cat.label}
-          className="category-icon"
-        />
+        {/* Categories */}
+        <div className="categories-container">
+{itemsToRender.map((cat) => (
+            <div
+              key={cat.id}
+              className={`category-btn ${active === cat.id ? "active" : ""}`}
+              onClick={() => setActive(cat.id)}
+            >
+              <img
+                src={active === cat.id ? cat.activeImg : cat.defaultImg}
+                alt={cat.label}
+                className="category-icon"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Right Arrow */}
+        <button
+          onClick={handleNext}
+          disabled={startIndex >= categories.length - visibleCount}
+          className={`arrow-btn-partner ${startIndex >= categories.length - visibleCount ? "disabled" : ""}`}
+        >
+          <img src={rightArrowIcon} alt="Next" />
+        </button>
       </div>
-    ))}
-  </div>
 
-  {/* Right Arrow */}
-  <button
-    onClick={handleNext}
-    disabled={startIndex >= categories.length - visibleCount}
-    className={`arrow-btn-partner ${startIndex >= categories.length - visibleCount ? "disabled" : ""}`}
-  >
-    <img src={rightArrowIcon} alt="Next" />
-  </button>
-</div>
-
-    <div className="partners-grid">
-   <div className="partner-box large">
-    {partnerData[active]?.map((partner) => (
-      <div key={partner.id} className="partner-item">
-        <img src={partner.img} className="partner-logo" />
+      {/* Partners Grid */}
+      <div className="partners-grid">
+        <div className="partner-box large">
+          {partnerData[active]?.map((partner) => (
+            <div key={partner.id} className="partner-item">
+              <img src={partner.img} className="partner-logo" alt={partner.name} />
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
+
       <ArrowButton label={"PARTNER WITH US"} />
     </section>
   );
